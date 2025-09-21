@@ -102,39 +102,18 @@ const ResearchPaper = () => {
             </h2>
             
             {/* Authors */}
-            <div className="text-sm md:text-base text-gray-700 mb-4 leading-relaxed">
+            <div className="text-sm md:text-base text-gray-900 mb-4 leading-relaxed font-medium">
               <span className="inline-block mr-2">
-                Renjith Prasad <sup className="text-red-500">*</sup>,
+                Tanmay Joshi <sup className="text-red-500">*</sup>,
               </span>
               <span className="inline-block mr-2">
-                Abhilekh Borah <sup className="text-red-500">*</sup>,
+                Ojas Sahu <sup className="text-red-500">*</sup>,
               </span>
               <span className="inline-block mr-2">
-                Hasnat Md Abdullah <sup className="text-red-500">*</sup>,
+                Archy Das <sup className="text-red-500">*</sup>,
               </span>
               <span className="inline-block mr-2">
-                Chathurangi Shyalika,
-              </span>
-              <span className="inline-block mr-2">
-                Gurpreet Singh,
-              </span>
-              <span className="inline-block mr-2">
-                Ritvik Garimella,
-              </span>
-              <span className="inline-block mr-2">
-                Rajarshi Roy,
-              </span>
-              <span className="inline-block mr-2">
-                Harshul Surana,
-              </span>
-              <span className="inline-block mr-2">
-                Nasrin Imanpour,
-              </span>
-              <span className="inline-block mr-2">
-                Suranjana Trivedy,
-              </span>
-              <span className="inline-block mr-2">
-                Amit Sheth,
+                Abhishek Kanti,
               </span>
               <span className="inline-block">
                 Amitava Das
