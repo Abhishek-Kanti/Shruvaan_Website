@@ -174,15 +174,20 @@ const ResearchPaper = () => {
 
         {/* Diagram Section */}
         <div className="mb-12">
-          <div className="bg-gray-50 rounded-lg p-6 md:p-8">
-            <div className="aspect-video bg-white rounded-lg border border-gray-200 flex items-center justify-center">
-              <div className="text-center text-gray-500">
-                <div className="w-16 h-16 mx-auto mb-4 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <FileText size={32} />
+          <div className="bg-gray-50 rounded-xl p-6 md:p-8 diagram-section">
+            <div className="bg-white rounded-xl border border-gray-200 p-6 md:p-8 min-h-[500px] md:min-h-[600px] flex items-center justify-center">
+              <div className="text-center text-gray-500 max-w-md">
+                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-blue-100 to-purple-100 rounded-xl flex items-center justify-center">
+                  <FileText size={40} className="text-blue-600" />
                 </div>
-                <p className="text-lg font-medium">Technical Diagram Placeholder</p>
-                <p className="text-sm mt-2">
-                  Replace this area with your research diagram/figure
+                <h3 className="text-xl font-semibold text-gray-700 mb-3">
+                  Technical Diagram Area
+                </h3>
+                <p className="text-base text-gray-600">
+                  This space is reserved for your research methodology diagram showing the DPO-Kernels framework, alignment comparisons, and evaluation results.
+                </p>
+                <p className="text-sm text-gray-500 mt-3">
+                  Replace with your actual research figure/illustration
                 </p>
               </div>
             </div>
