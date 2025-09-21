@@ -93,11 +93,11 @@ const ResearchPaper = () => {
 
           {/* Title and Info */}
           <div className="flex-1 text-center lg:text-left">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-2 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-2 leading-tight font-serif">
               A Benchmark for Text-to-Image Alignment and<br />
               Kernelized Direct Preference Optimization
             </h1>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 font-serif">
               DETONATE
             </h2>
             
