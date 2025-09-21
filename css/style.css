@@ -241,11 +241,23 @@ body {
     background: #e5e7eb;
     border-radius: 4px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: 0.8rem;
     color: #6b7280;
     border: 1px solid #d1d5db;
+    gap: 0.5rem;
+}
+
+.img-placeholder i {
+    font-size: 1.5rem;
+    color: #9ca3af;
+}
+
+.img-placeholder span {
+    font-size: 0.7rem;
+    text-align: center;
 }
 
 .visualization-plots {
