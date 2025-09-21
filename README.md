@@ -1,14 +1,14 @@
 # DETONATE Research Website
 
-A professional static website for presenting the research paper **"A Benchmark for Text-to-Image Alignment and Kernelized Direct Preference Optimization" (DETONATE)**.
+A professional static website for presenting the research paper **"The First Secure Multilingual Model Context Protocol (MCP) for Natural Language Communication Among LLM Agents" (Shruvaan)**.
 
-![DETONATE Research Website](https://img.shields.io/badge/Status-Live-brightgreen)
+![Shruvaan Research Website](https://img.shields.io/badge/Status-Live-brightgreen)
 ![GitHub Pages](https://img.shields.io/badge/Deployment-GitHub%20Pages-blue)
 ![Responsive](https://img.shields.io/badge/Design-Responsive-orange)
 
 ## 🚀 Live Demo
 
-Visit the live website: `https://your-username.github.io/your-repo-name`
+Visit the live website: `https://abhishek-kanti.github.io/Shruvaan_Website/`
 
 ## 📋 Overview
 
@@ -65,7 +65,7 @@ This is a modern, responsive website designed to showcase the DETONATE research 
 ### Local Development
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/your-repo-name.git
+   git clone https://github.com/Abhishek-Kanti/Shruvaan_Website.git
    cd your-repo-name
    ```
 
@@ -84,7 +84,7 @@ This is a modern, responsive website designed to showcase the DETONATE research 
 1. **Push to GitHub**
    ```bash
    git add .
-   git commit -m "Add DETONATE research website"
+   git commit -m "Add Shruvaan research website"
    git push origin main
    ```
 
@@ -96,7 +96,7 @@ This is a modern, responsive website designed to showcase the DETONATE research 
    - Click **Save**
 
 3. **Access your live site**
-   Your website will be available at: `https://your-username.github.io/your-repo-name`
+   Your website will be available at: `https://abhishek-kanti.github.io/Shruvaan_Website/`
 
 ## ✏️ Customization Guide
 
