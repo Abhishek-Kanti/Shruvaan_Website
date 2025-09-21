@@ -17,7 +17,7 @@ const ResearchPaper = () => {
     <div className="min-h-screen bg-white">
       <div className="container mx-auto px-4 py-8 md:py-12">
         {/* Header Section */}
-        <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6 mb-8">
+        <div className="flex flex-col lg:flex-row items-center lg:items-center gap-6 mb-8">
           {/* Logo/Icon */}
           <div className="flex-shrink-0">
             <div className="relative w-32 h-32 md:w-40 md:h-40 logo-container">
