@@ -55,9 +55,10 @@ body {
 
 .authors {
     font-size: 1.1rem;
-    color: #4b5563;
+    color: #1f2937;
     margin-bottom: 0.5rem;
     line-height: 1.8;
+    font-weight: 500;
 }
 
 .author {
