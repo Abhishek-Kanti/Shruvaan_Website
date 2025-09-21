@@ -1,4 +1,4 @@
-# DETONATE Research Website
+# Shruvaan Research Website
 
 A professional static website for presenting the research paper **"The First Secure Multilingual Model Context Protocol (MCP) for Natural Language Communication Among LLM Agents" (Shruvaan)**.
 
