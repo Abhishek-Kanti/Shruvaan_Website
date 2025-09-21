@@ -92,7 +92,7 @@ const ResearchPaper = () => {
           </div>
 
           {/* Title and Info */}
-          <div className="flex-1">
+          <div className="flex-1 text-center lg:text-left">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-2 leading-tight">
               A Benchmark for Text-to-Image Alignment and<br />
               Kernelized Direct Preference Optimization
@@ -152,7 +152,7 @@ const ResearchPaper = () => {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
               <Button
                 onClick={handlePaperClick}
                 className="bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-lg flex items-center gap-2 font-medium transition-colors"
