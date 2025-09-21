@@ -20,43 +20,69 @@ const ResearchPaper = () => {
         <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6 mb-8">
           {/* Logo/Icon */}
           <div className="flex-shrink-0">
-            <div className="relative w-32 h-32 md:w-40 md:h-40">
+            <div className="relative w-32 h-32 md:w-40 md:h-40 logo-container">
               {/* Colorful geometric shapes */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="relative">
-                  {/* Chat bubble */}
-                  <div className="absolute top-0 left-0 w-8 h-8 bg-teal-400 rounded-lg transform -rotate-12"></div>
-                  {/* X document */}
-                  <div className="absolute top-2 right-0 w-6 h-8 bg-gray-300 rounded transform rotate-12 flex items-center justify-center">
-                    <span className="text-red-500 font-bold text-xs">X</span>
+                  {/* Teal chat bubble with message lines */}
+                  <div className="absolute top-1 left-1 w-10 h-8 bg-teal-400 rounded-lg transform -rotate-12 flex items-center justify-center">
+                    <div className="space-y-0.5">
+                      <div className="w-6 h-0.5 bg-white rounded"></div>
+                      <div className="w-4 h-0.5 bg-white rounded"></div>
+                      <div className="w-5 h-0.5 bg-white rounded"></div>
+                    </div>
                   </div>
-                  {/* Chart/graph */}
-                  <div className="absolute bottom-0 left-2 w-8 h-8 bg-blue-300 rounded transform rotate-6"></div>
+                  
+                  {/* Document with X */}
+                  <div className="absolute top-2 right-1 w-7 h-9 bg-gray-200 rounded transform rotate-12 flex items-center justify-center border border-gray-300">
+                    <span className="text-red-600 font-bold text-sm">✕</span>
+                  </div>
+                  
+                  {/* Blue chart/graph */}
+                  <div className="absolute bottom-1 left-3 w-9 h-8 bg-blue-400 rounded transform rotate-6 flex items-end justify-center p-1">
+                    <div className="flex items-end space-x-0.5">
+                      <div className="w-1 h-2 bg-white rounded-sm"></div>
+                      <div className="w-1 h-4 bg-white rounded-sm"></div>
+                      <div className="w-1 h-3 bg-white rounded-sm"></div>
+                      <div className="w-1 h-5 bg-white rounded-sm"></div>
+                    </div>
+                  </div>
+                  
                   {/* Central purple element */}
-                  <div className="w-12 h-12 bg-purple-500 rounded-lg transform -rotate-6"></div>
-                  {/* Orange swoosh */}
-                  <div className="absolute -bottom-2 -left-4 w-16 h-8">
-                    <svg viewBox="0 0 64 32" className="w-full h-full">
+                  <div className="w-14 h-12 bg-purple-600 rounded-lg transform -rotate-3 flex items-center justify-center">
+                    <div className="w-8 h-2 bg-purple-300 rounded-full"></div>
+                  </div>
+                  
+                  {/* Orange swoosh lines */}
+                  <div className="absolute -bottom-2 -left-6 w-20 h-12">
+                    <svg viewBox="0 0 80 48" className="w-full h-full">
                       <path
-                        d="M4,28 Q20,8 40,16 Q50,20 60,12"
+                        d="M8,40 Q30,12 50,24 Q65,30 76,18"
                         stroke="#f97316"
                         strokeWidth="3"
                         fill="none"
-                        opacity="0.8"
+                        opacity="0.9"
                       />
                       <path
-                        d="M2,24 Q18,4 38,12 Q48,16 58,8"
+                        d="M6,36 Q28,8 48,20 Q63,26 74,14"
+                        stroke="#f97316"
+                        strokeWidth="2.5"
+                        fill="none"
+                        opacity="0.7"
+                      />
+                      <path
+                        d="M4,32 Q26,4 46,16 Q61,22 72,10"
                         stroke="#f97316"
                         strokeWidth="2"
                         fill="none"
-                        opacity="0.6"
+                        opacity="0.5"
                       />
                       <path
-                        d="M0,20 Q16,0 36,8 Q46,12 56,4"
+                        d="M2,28 Q24,0 44,12 Q59,18 70,6"
                         stroke="#f97316"
-                        strokeWidth="1"
+                        strokeWidth="1.5"
                         fill="none"
-                        opacity="0.4"
+                        opacity="0.3"
                       />
                     </svg>
                   </div>
