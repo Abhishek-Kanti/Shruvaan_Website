@@ -260,24 +260,21 @@ body {
         font-size: 1.8rem;
     }
     
-    .project-name {
-        font-size: 2.5rem;
+    .main-image-placeholder {
+        min-height: 300px;
+        padding: 2rem 1rem;
     }
     
-    .diagram-content {
-        grid-template-columns: 1fr;
-        gap: 1rem;
+    .main-image-placeholder i {
+        font-size: 3rem;
     }
     
-    .method-labels {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
+    .main-image-placeholder h4 {
+        font-size: 1.2rem;
     }
     
-    .diagram-middle {
-        grid-template-columns: 1fr;
-        gap: 1rem;
+    .image-instructions {
+        max-width: 100%;
     }
     
     .authors {
@@ -300,18 +297,21 @@ body {
         font-size: 1.5rem;
     }
     
-    .project-name {
-        font-size: 2rem;
+    .main-image-placeholder {
+        min-height: 250px;
+        padding: 1.5rem 1rem;
     }
     
-    .logo-icon {
-        width: 100px;
-        height: 100px;
+    .main-image-placeholder i {
+        font-size: 2.5rem;
     }
     
-    .logo-icon > div {
-        font-size: 20px;
-        padding: 6px;
+    .main-image-placeholder h4 {
+        font-size: 1.1rem;
+    }
+    
+    .main-image-placeholder p {
+        font-size: 0.9rem;
     }
     
     .diagram-section {
