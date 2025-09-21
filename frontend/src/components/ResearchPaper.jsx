@@ -113,7 +113,7 @@ const ResearchPaper = () => {
                 Archy Das <sup className="text-red-500">*</sup>,
               </span>
               <span className="inline-block mr-2">
-                Abhishek Kanti,
+                Abhishek Kanti <sup className="text-red-500">*</sup>,
               </span>
               <span className="inline-block">
                 Amitava Das
