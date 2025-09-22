@@ -1,272 +1,154 @@
-/* General fixes */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Custom Properties for consistency */
+:root {
+    --color-text-dark: #333;
+    --color-text-light: #555;
+    --color-border-light: #e0e0e0;
+    --color-background-paper: #f9f9f9;
+    --font-primary: 'Inter', sans-serif;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 3rem;
 }
 
+/* Global Styles */
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #fafafa;
-    font-size: 16px;
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    color: var(--color-text-dark);
+    background-color: #f0f2f5; /* Light gray background for the entire page */
+    margin: 0;
+    padding: 0;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-    background: white;
-    min-height: 100vh;
+.page-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Subtle shadow for the paper-like effect */
+    min-height: 100vh;
+    padding: var(--spacing-md) var(--spacing-sm);
 }
 
-/* Header Section */
+/* Header & Title Section */
 .header {
-    text-align: center;
-    margin-bottom: 2rem; /* Adjusted for better flow */
+    text-align: center;
+    padding-top: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
 }
 
-.title-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem; /* Adjusted */
-    flex-wrap: wrap;
-    gap: 1.5rem;
+.header-logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
 }
 
-.title-content {
-    flex: 1;
-    max-width: 900px;
-    text-align: center;
+.header-logo {
+    height: 40px; /* Adjust size as needed */
 }
 
-.main-title-image {
-    display: block;
-    margin: 0 auto;
-    max-height: 120px;
-    width: auto;
+.header-title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--color-text-dark);
+    line-height: 1.3;
 }
 
-/* Authors Section */
+/* Authors and Affiliation */
 .authors-section {
-    margin-top: 1rem; /* Add a bit of space below the title */
-    margin-bottom: 1.5rem; /* Adjusted for better spacing */
-    text-align: center;
+    margin-bottom: var(--spacing-md);
+    font-size: 0.95rem;
+    color: var(--color-text-light);
 }
 
 .authors {
-    font-size: 1.1rem;
-    color: #1f2937;
-    margin-bottom: 0.5rem;
-    line-height: 1.8;
-    font-weight: 500;
+    margin-bottom: 0.2rem;
 }
 
 .author {
-    margin-right: 0.3rem;
+    font-weight: 500;
 }
 
 .affiliation {
-    font-size: 1rem;
-    color: #6b7280;
-    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
 }
 
+.equal-contribution {
+    font-style: italic;
+    color: #888;
+    margin-top: 0.2rem;
+}
+
+/* Action Buttons */
 .action-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
 }
 
 .btn {
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    text-decoration: none;
-    font-family: inherit;
+    padding: 0.6rem 1.5rem;
+    border: 1px solid var(--color-border-light);
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.btn-paper {
-    background-color: #1f2937;
-    color: white;
+.btn-primary {
+    background-color: var(--color-text-dark);
+    color: white;
 }
 
-.btn-paper:hover {
-    background-color: #374151;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+.btn-primary:hover {
+    background-color: #444;
 }
 
-.btn-code {
-    background-color: #f3f4f6;
-    color: #1f2937;
-    border: 1px solid #d1d5db;
+.btn-secondary {
+    background-color: white;
+    color: var(--color-text-dark);
 }
 
-.btn-code:hover {
-    background-color: #e5e7eb;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+.btn-secondary:hover {
+    background-color: var(--color-background-paper);
 }
 
-/* Diagram Section */
-.diagram-section {
-    margin: 2rem 0; /* Reduced from 4rem */
-    padding: 1.5rem; /* Reduced from 2rem */
-    background: #fefefe;
-    border-radius: 12px;
-    border: 1px solid #e5e7eb;
+/* Main Content & Figure */
+.main-content {
+    padding: 0 var(--spacing-sm);
 }
 
-.latent-space-header {
-    text-align: center;
-    margin-bottom: 1.5rem; /* Reduced from 2rem */
+.figure-container {
+    border: 1px solid var(--color-border-light);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--color-background-paper);
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
 
-.latent-space-header h2 { /* Changed h3 to h2 to match HTML */
-    font-size: 1.8rem;
-    font-weight: 600;
-    color: #1f2937;
+.main-figure {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: var(--spacing-md);
 }
 
-.main-image-placeholder {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 400px;
-    background: #f9fafb;
-    border: 2px dashed #9ca3af;
-    border-radius: 12px;
-    padding: 2rem 1.5rem; /* Reduced padding */
-    text-align: center;
-    transition: all 0.3s ease;
+.figure-caption {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--color-text-light);
 }
 
-.diagram-image {
-    max-width: 100%; /* Ensures image fits container */
-    height: auto;
+.figure-caption p {
+    margin: 0;
 }
-
-/* Abstract Section */
-.abstract-section {
-    margin-top: 2rem; /* Reduced from 4rem */
-}
-
-.section-title {
-    font-size: 2.5rem;
-    font-weight: 600;
-    color: #111827;
-    text-align: center;
-    margin-bottom: 1.5rem; /* Reduced from 2rem */
-}
-
-.abstract-content {
-    max-width: 1000px;
-    margin: 0 auto;
-    font-size: 1rem;
-    line-height: 1.8;
-    color: #374151;
-    text-align: justify;
-}
-
-.abstract-content p {
-    margin-bottom: 1rem; /* Reduced from 1.5rem */
-}
-
-.abstract-content strong {
-    color: #1f2937;
-    font-weight: 600;
-}
-
-.abstract-content em {
-    color: #6b7280;
-    font-style: italic;
-}
-
-/* Responsive Design (No changes needed here, as the problem is with base spacing) */
-@media (max-width: 768px) {
-    .container {
-        padding: 1rem;
-    }
-    
-    .title-section {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .main-title {
-        font-size: 1.8rem;
-    }
-    
-    .main-image-placeholder {
-        min-height: 300px;
-        padding: 2rem 1rem;
-    }
-    
-    .main-image-placeholder i {
-        font-size: 3rem;
-    }
-    
-    .main-image-placeholder h4 {
-        font-size: 1.2rem;
-    }
-    
-    .image-instructions {
-        max-width: 100%;
-    }
-    
-    .authors {
-        font-size: 1rem;
-    }
-    
-    .action-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .btn {
-        width: 200px;
-        justify-content: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .main-title {
-        font-size: 1.5rem;
-    }
-    
-    .main-image-placeholder {
-        min-height: 250px;
-        padding: 1.5rem 1rem;
-    }
-    
-    .main-image-placeholder i {
-        font-size: 2.5rem;
-    }
-    
-    .main-image-placeholder h4 {
-        font-size: 1.1rem;
-    }
-    
-    .main-image-placeholder p {
-        font-size: 0.9rem;
-    }
-    
-    .diagram-section {
-        padding: 1rem;
-    }
-    
     .abstract-content {
         text-align: left;
     }
