@@ -69,18 +69,20 @@
         </section>
 
         <!-- Abstract Section -->
-        <section class="abstract-section">
-            <h2 class="section-title">Abstract</h2>
-            <div class="abstract-content">
-                <p>
-                    Alignment is crucial for text-to-image (T2I) models to ensure that the generated images faithfully capture user intent while maintaining safety and fairness. <strong>Direct Preference Optimization (DPO)</strong> has emerged as a key alignment technique for large language models (LLMs), and its influence is now extending to T2I systems. This paper introduces <strong>DPO-Kernels for T2I models</strong>, a novel extension of DPO that enhances alignment across three key dimensions: (i) <strong>Hybrid Loss</strong>, which integrates embedding-based objectives with the traditional probability-based loss to improve optimization; (ii) <strong>Kernelized Representations</strong>, leveraging <strong>Radial Basis Function (RBF)</strong>, <strong>Polynomial</strong>, and <strong>Wavelet</strong> kernels to enable richer feature transformations, ensuring better separation between safe and unsafe inputs; and (iii) <strong>Divergence Selection</strong>, expanding beyond DPO's default <strong>Kullback-Leibler (KL)</strong> regularizer by incorporating alternative divergence measures such as <strong>Wasserstein</strong> and <strong>Renyi</strong> divergences to enhance stability and robustness in alignment training as shown in Fig. 1.
-                </p>
-                <p>
-                    We introduce <strong>DETONATE</strong>, the first large-scale benchmark of its kind, comprising approximately 100K curated image pairs, categorized as <em>chosen</em> and <em>rejected</em>. This benchmark encapsulates three critical axes of social bias and discrimination: <strong>Race</strong>, <strong>Gender</strong>, and <strong>Disability</strong>. The prompts are sourced from the hate speech datasets, while the images are generated using state-of-the-art T2I models, including Stable Diffusion 3.5 Large (SD-3.5), Stable Diffusion XL (SD-XL), and Midjourney. Furthermore, to evaluate alignment beyond surface metrics, we introduce the <strong>Alignment Quality Index (AQI)</strong>, a novel geometric measure that quantifies latent space separability of safe/unsafe image activations, revealing hidden model vulnerabilities. While alignment techniques often risk overfitting, we empirically demonstrate that <strong>DPO-Kernels</strong> preserve strong generalization bounds using the theory of <strong>Heavy-tailed Self-Regularization (HT-SR)</strong>.
-                </p>
-            </div>
-        </section>
+       <section class="abstract-section">
+    <h2 class="section-title">Abstract</h2>
+    <div class="abstract-content">
+        <p>
+            As AI agents increasingly participate in mission-critical workflows—from finance and defense to healthcare and climate response—the need for secure, semantically-aware, and multilingual communication becomes paramount. Existing agent systems provide orchestration and tool-calling capabilities but lack cryptographic safeguards, multilingual protocol integrity, and verifiable messaging, exposing vulnerabilities such as prompt injections, schema mimicry, cross-context spoofing, and multilingual ambiguities.
+        </p>
+        <p>
+            We propose <strong>श्रुvaan</strong>, the first cryptographically grounded, multilingual model-context protocol (MCP) for agent-to-agent communication. Unlike static ciphers like AES, RSA, or TLS, <strong>श्रुvaan</strong> integrates encryption directly into the evolving semantic layer, treating it as a learned, latent transformation conditioned on agent roles, policies, epochs, and multilingual contexts. Key innovations include a <strong>Hierarchical Keyed Protocol (HKP)</strong> for role- and context-bound encryption, a <strong>Proof-of-Protocol (PoP)</strong> for verifiable and tamper-evident messaging, and a <strong>Cipher Calibration Phase</strong> where coordinated agents continuously refine encryption based on contextual risk.
+        </p>
+        <p>
+            By enabling zero-reveal communication, multilingual ciphering, and tamper-evident semantics, <strong>श्रुvaan</strong> establishes a foundational leap in secure, role-aware AI agent communication. Its effectiveness will be benchmarked using metrics such as leakage entropy, mimic risk, and decode exclusivity score, ensuring robust and context-sensitive evaluation across multilingual and semantically diverse scenarios.
+        </p>
     </div>
+</section>
 
     <script src="js/script.js"></script>
 </body>
