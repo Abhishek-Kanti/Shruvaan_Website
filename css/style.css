@@ -44,9 +44,10 @@ body {
 
 /* Header Image */
 .main-title-image {
-    display: block;      /* removes inline image gap */
-    margin: 0 auto;      /* centers the image */
-    max-height: 120px;   /* adjust height as needed */
+    display: block;
+    margin: 0 auto;
+    max-height: 120px; /* adjust as needed */
+    width: auto;       /* preserves aspect ratio */
 }
 
 /* Authors Section */
