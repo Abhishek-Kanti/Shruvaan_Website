@@ -54,7 +54,9 @@ body {
 .authors-section {
     margin-top: 0;       /* remove extra top gap */
     margin-bottom: 2rem; /* optional, adjust spacing below authors */
+    text-align: center;  /* centers the text horizontally */
 }
+
 
 .authors {
     font-size: 1.1rem;
