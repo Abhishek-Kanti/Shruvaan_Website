@@ -101,7 +101,19 @@
             font-size: 0.875rem;
         }
     </style>
+
+
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[','\\]']]
+        }
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+
 <body>
     <div class="container">
         <header class="header">
@@ -126,17 +138,7 @@
             </div>
         </header>
 
-        <section class="diagram-section">
-            <div class="diagram-container">
-                <div class="latent-space-header">
-                    <h2>The Cipher Calibration Cycle: Adaptive Hierarchical Encryption with Feedback Learning</h2>
-                </div>
-                <div class="main-image-placeholder">
-                    <img src="images/image.png" alt="Technical Diagram" class="diagram-image" />
-                </div>
-            </div>
-        </section>
-
+    
         <section class="abstract-section">
             <h2 class="section-title">Abstract</h2>
             <div class="abstract-content">
@@ -334,9 +336,14 @@
         
         <section class="calibration-walkthrough-section">
             <h2 class="section-title">The Cipher Calibration Cycle: A Living Encryption</h2>
+             <div class="figure-multi-panel">
+                    <div class="figure-panel">
+                        <img src="images/image.png" alt="Cipher Calibration Cycle with Iconic Circular Layout">
+                        <p class="figure-subcaption">(A) The iconic circular layout of the 6 agents in the feedback loop.</p>
+                    </div>
             <div class="abstract-content">
                 <p>
-                    The Cipher Calibration Cycle is a first-of-its-kind dynamic encryption framework. Unlike static cryptographic protocols, this architecture continuously recalibrates its encryption strategy based on traceable risks and mimicry signals from a team of six specialized AI agents. The result is a live, self-correcting semantic cipher that evolves through feedback to preserve both security and meaning. 🧠
+                    The Cipher Calibration Cycle is a first-of-its-kind dynamic encryption framework. Unlike static cryptographic protocols, this architecture continuously recalibrates its encryption strategy based on traceable risks and mimicry signals from a team of six specialized AI agents. The result is a live, self-correcting semantic cipher that evolves through feedback to preserve both security and meaning. 
                 </p>
                 <div class="table-container">
                     <p class="table-caption"><b>Table 4:</b> Roles of Agents in the Cipher Calibration Cycle.</p>
@@ -358,7 +365,7 @@
                     </table>
                 </div>
 
-                <h3>Anatomy of a Secure Transaction 🔄</h3>
+                <h3>Anatomy of a Secure Transaction</h3>
                 <p>To illustrate the mechanics, we walk through the following input prompt:</p>
                 <pre><code>Transfer $75,000 to account number 7395-8845-2291 from account number 1559-6623-4401</code></pre>
 
@@ -377,11 +384,7 @@
                 <p class="figure-caption">
                     <b>Figure 2: Cipher Calibration Cycle.</b> (A) The agentic cipher protocol shows the 6 agents in a self-regulating loop. (B) The semantic risk landscape shows how Praeceptor calibrates toward minima to reduce both mimicking and decryption vulnerabilities.
                 </p>
-                <div class="figure-multi-panel">
-                    <div class="figure-panel">
-                        <img src="images/image.png" alt="Cipher Calibration Cycle with Iconic Circular Layout">
-                        <p class="figure-subcaption">(A) The iconic circular layout of the 6 agents in the feedback loop.</p>
-                    </div>
+               
                     <div class="figure-panel">
                         <img src="images/pracepetor_optimization.png" alt="Semantic Calibration Loss Surface">
                         <p class="figure-subcaption">(B) The semantic calibration loss surface for Praeceptor optimization.</p>
