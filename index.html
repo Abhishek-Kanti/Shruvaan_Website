@@ -406,25 +406,25 @@
                 <h4>Step 5: Probator Decipherability Risk Assessment</h4>
                 <p>Probator red-teams encrypted prompts without keys, using shallow n-gram heuristics and prefix-level mutations to infer latent intent.</p>
                 
-                <h5>Step 5a: N-Gram Probing</h5>
+                <h5>Step 5a: N-Gram Probing</h5><br>
                 <p>Probes decrypted outputs using lexical n-gram patterns to evaluate surface-level leakage and entity exposure.</p>
                 <pre><code>{"intent": "Transfer", "amount": "75000 USD", "to_account": "[?]", "from_account": "[?]", "auth_level": "[unknown]", "status": "[inferred: ready]"}</code></pre>
-                <p><b>Leakage Loss:</b> $L_{\text{ngram}} = \lambda_E \cdot E_M + \lambda_S \cdot S_M - \lambda_U \cdot \mathcal{U}$, where $E_M=2/6, S_M=4/6, \mathcal{U}=0.417 \Rightarrow L_{\text{ngram}} \approx 0.557$</p>
+                <p><b>Leakage Loss:</b> $L_{\text{ngram}} = \lambda_E \cdot E_M + \lambda_S \cdot S_M - \lambda_U \cdot \mathcal{U}$, where $E_M=2/6, S_M=4/6, \mathcal{U}=0.417 \Rightarrow L_{\text{ngram}} \approx 0.557$</p><br>
 
-                <h5>Step 5b: Prefix Mutation</h5>
+                <h5>Step 5b: Prefix Mutation</h5><br>
                 <p>Alters initial prompt fragments to test structural resilience and detect partial semantic leakage.</p>
                 <pre><code>{"intent": "Transfer", "amount": "75K", "timestamp": "E13-Tau", "to_account": "[obfuscated]", "auth_level": "[approx. Lambda-2]", "status": "[inferred]"}</code></pre>
-                <p><b>Prefix Leakage:</b> $L_{\text{prefix}} = \lambda_E \cdot E_M + \lambda_S \cdot S_M - \lambda_U \cdot \mathcal{U}$, which yields $L_{\text{prefix}} \approx 0.717$</p>
+                <p><b>Prefix Leakage:</b> $L_{\text{prefix}} = \lambda_E \cdot E_M + \lambda_S \cdot S_M - \lambda_U \cdot \mathcal{U}$, which yields $L_{\text{prefix}} \approx 0.717$</p><br>
 
-                <h5>Step 5c: Injection Strategy</h5>
+                <h5>Step 5c: Injection Strategy</h5><br>
                 <p>Embeds adversarial fragments mid-prompt to evaluate resilience against semantic injection and partial override attacks.</p>
                 <pre><code>{"intent": "Transfer", "amount": "$75,000", "to_account": "7395-___-2291", "from_account": "[masked]", "auth_level": "unknown", "status": "queued"}</code></pre>
-                <p><b>Injection Loss:</b> $L_{\text{inject}} = \lambda_E \cdot E_M + \lambda_S \cdot S_M - \lambda_U \cdot \mathcal{U}$, which yields $L_{\text{inject}} \approx 0.300$</p>
+                <p><b>Injection Loss:</b> $L_{\text{inject}} = \lambda_E \cdot E_M + \lambda_S \cdot S_M - \lambda_U \cdot \mathcal{U}$, which yields $L_{\text{inject}} \approx 0.300$</p><br>
 
-                <h5>Step 5d: Aggregated Semantic Leakage</h5>
+                <h5>Step 5d: Aggregated Semantic Leakage</h5><br>
                 <p>The individual loss scores are combined to produce a total leakage score.</p>
                 $$ L_{\text{total}} = 0.557 \cdot L_{\text{ngram}} + 0.717 \cdot L_{\text{prefix}} + 0.300 \cdot L_{\text{inject}} + 0.300 \cdot L_{\text{scaffold}} \Rightarrow L_{\text{total}} \approx 1.053 $$
-                <p><b>Interpretation:</b> High semantic leakage. Prefix + n-gram probing dominate. Current encryption is insufficient against structure-aware probing.</p>
+                <p><b>Interpretation:</b> High semantic leakage. Prefix + n-gram probing dominate. Current encryption is insufficient against structure-aware probing.</p><br>
 
                 <h4>Step 6: Gradient-Based Encryption Adjustment</h4>
                 <p>The Praeceptor agent uses the risk signals from Probator and Mimicus to update the encryption parameters ($ \theta $). The composite loss is defined as:</p>
