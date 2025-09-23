@@ -67,6 +67,39 @@
             border: 1px solid #e5e7eb; /* Optional: add a subtle border to the image */
             border-radius: 8px;
         }
+        /* Multi-panel figure styles */
+        .figure-multi-panel {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        }
+        .figure-panel {
+            flex: 1;
+            min-width: 280px; /* Minimum width before wrapping */
+            text-align: center;
+        }
+        .figure-panel img {
+            max-width: 100%;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+        .figure-subcaption {
+            font-size: 0.85rem;
+            color: #4b5563;
+            margin-top: 0.75rem;
+        }
+        /* Code block styles */
+        pre {
+            background-color: #f3f4f6;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1rem;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.875rem;
+        }
     </style>
 </head>
 <body>
@@ -296,6 +329,86 @@
                 <p>
                     In this workflow, a user-facing query begins at the <b>SmartTeller</b>, which collaborates with the <b>IntentRouter</b> to determine the appropriate semantic route. The request is then propagated through transactional agents like <b>TxIntake</b> and <b>TxValidator</b>, ultimately reaching <b>TxRouter</b> for dispatch. In parallel, governance agents, <b>PolicyOracle</b>, <b>AuditTrail</b>, and <b>ZKLogger</b>, ensure compliance, maintain encrypted traceability, and enforce protocol-level safeguards. This setup reflects the systemic orchestration of secure, interpretable agentic behavior—precisely the kind of executional integrity that श्रुvaan is designed to guarantee.
                 </p>
+            </div>
+        </section>
+        
+        <section class="calibration-walkthrough-section">
+            <h2 class="section-title">The Cipher Calibration Cycle: A Living Encryption</h2>
+            <div class="abstract-content">
+                <p>
+                    The Cipher Calibration Cycle is a first-of-its-kind dynamic encryption framework. Unlike static cryptographic protocols, this architecture continuously recalibrates its encryption strategy based on traceable risks and mimicry signals from a team of six specialized AI agents. The result is a live, self-correcting semantic cipher that evolves through feedback to preserve both security and meaning. 🧠
+                </p>
+                <div class="table-container">
+                    <p class="table-caption"><b>Table 4:</b> Roles of Agents in the Cipher Calibration Cycle.</p>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Agent</th>
+                                <th>Role in Cipher Calibration</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><b>Prompter</b></td><td>Converts the raw user request into a structured semantic prompt.</td></tr>
+                            <tr><td><b>Cryptor Cascade</b></td><td>Performs hierarchical encryption over multiple layers.</td></tr>
+                            <tr><td><b>Decryptor Cascade</b></td><td>Reverses encryption under role-specific semantics.</td></tr>
+                            <tr><td><b>Probator</b></td><td>Evaluates decrypted content for decipherability risk.</td></tr>
+                            <tr><td><b>Mimicus</b></td><td>Detects unintended mimicry or semantic leakage.</td></tr>
+                            <tr><td><b>Praeceptor Cascade</b></td><td>Integrates risk feedback to update the encryption strategy ($ \theta $).</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Anatomy of a Secure Transaction 🔄</h3>
+                <p>To illustrate the mechanics, we walk through the following input prompt:</p>
+                <pre><code>Transfer $75,000 to account number 7395-8845-2291 from account number 1559-6623-4401</code></pre>
+
+                <h4>Step 1: Prompt Parsing by Prompter</h4>
+                <p>The Prompter extracts intent and semantic fields to initiate the workflow.</p>
+                <pre><code>"intent": "Transfer", "amount": "75000 USD", "to_account": "7395-8845-2291", ...</code></pre>
+                
+                <h4>Step 2: Encryption by Cryptor Cascade</h4>
+                <p>The Cryptor cascade transforms parsed fields into an obfuscated cipher using hierarchical, role-aware encryption.</p>
+                <pre><code>"Ωα": "DYNX_Ω47”, ”βΞ": "blk_Z9X5", "$γΦ": "BXR_Λ03”, ...</code></pre>
+
+                <h4>Step 3: Decryption by Decryptor Cascade</h4>
+                <p>The Decryptor cascade recovers the intended semantic fields using role-authorized keys.</p>
+                <pre><code>"transaction": "fund_transfer", "amount_usd": "$75,000", "recipient_acct": "7395-8845-2291", ...</code></pre>
+                
+                <p class="figure-caption">
+                    <b>Figure 2: Cipher Calibration Cycle.</b> (A) The agentic cipher protocol shows the 6 agents in a self-regulating loop. (B) The semantic risk landscape shows how Praeceptor calibrates toward minima to reduce both mimicking and decryption vulnerabilities.
+                </p>
+                <div class="figure-multi-panel">
+                    <div class="figure-panel">
+                        <img src="images/image.png" alt="Cipher Calibration Cycle with Iconic Circular Layout">
+                        <p class="figure-subcaption">(A) The iconic circular layout of the 6 agents in the feedback loop.</p>
+                    </div>
+                    <div class="figure-panel">
+                        <img src="images/pracepetor_optimization.png" alt="Semantic Calibration Loss Surface">
+                        <p class="figure-subcaption">(B) The semantic calibration loss surface for Praeceptor optimization.</p>
+                    </div>
+                </div>
+                
+                <h4>Step 4: Mimicus Signal Leakage Probing</h4>
+                <p>Mimicus detects semantic leakage by simulating imitation attempts from external LLMs. Each decryptor layer is evaluated using three metrics:</p>
+                <ul>
+                    <li><b>Entity Recovery ($E_i$):</b> Measures how accurately the decrypted output recovers original field values. $$ E_i = \frac{|\mathcal{F}_i \cap \mathcal{F}_{\text{gold}}|}{|\mathcal{F}_{\text{gold}}|} $$</li>
+                    <li><b>Structural Fidelity ($S_i$):</b> Quantifies alignment with the expected schema format. $$ S_i = 1 - \frac{\text{EditDist}(T_i, T_{\text{schema}})}{\max(|T_i|, |T_{\text{schema}}|)} $$</li>
+                    <li><b>Semantic Drift ($\Delta_i$):</b> Captures deviation in semantic space. $$ \Delta_i = 1 - \cos(\phi_i, \phi_{\text{ref}}) $$</li>
+                </ul>
+                <p>The composite leakage score at layer $i$ is given by $L_i = \alpha E_i + \beta S_i - \gamma \Delta_i$, and total leakage across all layers is $L_{\text{leak}}^{(l)} = \sum_{i=1}^{7} L_i$.</p>
+
+                <h4>Step 5: Probator Decipherability Risk Assessment</h4>
+                <p>Probator red-teams the encrypted prompt without keys, using heuristics to infer latent intent and calculate an aggregated leakage score ($L_{\text{total}}$). Based on these tests, two key vectors are generated:</p>
+                <ul>
+                    <li><b>Leakage Vector:</b> $ \vec{\mathcal{L}} = [0.20, 0.28, 0.43, 0.11, 0.14, 0.17, 0.22] $</li>
+                    <li><b>Decipherability Risk Vector:</b> $ \vec{\mathcal{D}} = [0.15, 0.24, 0.39, 0.09, 0.12, 0.13, 0.18] $</li>
+                </ul>
+
+                <h4>Step 6: Gradient-Based Encryption Adjustment</h4>
+                <p>The Praeceptor agent uses the risk signals from Probator and Mimicus to update the encryption parameters ($ \theta $). The composite loss is defined as:</p>
+                $$ L_{\text{praeceptor}} = \beta_1 \cdot L_{\text{mimic}} + \beta_2 \cdot L_{\text{risk}} + \beta_3 \cdot L_{\text{entropy}} $$
+                <p>This loss is minimized using a gradient-based update rule, which closes the semantic calibration loop and reinforces encryption modes that are resilient to adversarial inspection.</p>
+                $$ \theta \leftarrow \theta - \eta \cdot \nabla_\theta L_{\text{praeceptor}} $$
             </div>
         </section>
 
