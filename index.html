@@ -433,6 +433,101 @@
                 $$ \theta \leftarrow \theta - \eta \cdot \nabla_\theta L_{\text{praeceptor}} $$
             </div>
         </section>
+ <section class="evaluation-section">
+            <h2 class="section-title">Evaluation</h2>
+            <div class="abstract-content">
+                <p><b>Research Question:</b> How effective is the full-cycle cipher calibration pipeline at minimizing adversarial leakage while retaining semantic alignment for intended recipients?</p>
+                
+                <p>We evaluate the full-cycle encryption protocol across four primary axes:</p>
+                <ul>
+                    <li><b>I. Adversarial Robustness:</b> Blocks reconstruction by LLM probes—statistical, morphological, or injected.</li>
+                    <li><b>II. Semantic Role Preservation:</b> Retains field-level accuracy via scaffold-aware decoding.</li>
+                    <li><b>III. Leakage Score ($L_{\text{total}}$):</b> A combined loss across four attack types on 100 schema prompts.</li>
+                    <li><b>IV. Cipher Diversity & Entropy:</b> Measures the growth of entropy, edit distance, and token variation.</li>
+                </ul>
+
+                <p class="figure-caption">
+                    <b>Figure 3: Evaluation Criteria for Cipher Calibration and Semantic Obfuscation.</b> This infographic outlines eight evaluation dimensions: (1) Semantic Obfuscation, (2) Adversarial Resistance, (3) Cipher Morphology Robustness, (4) Role-Decoding Preservation, (5) Calibration Stability, (6) Emergent Safety, (7) Baseline Comparison, and (8) Societal Impact.
+                </p>
+           
+                <div class="figure-panel">
+                        <img src="images/evaluation_infographic.png" alt="Evaluation Criteria">
+                        
+                    </div>
+                </div>
+                
+                <div class="table-container">
+                    <p class="table-caption"><b>Table 4:</b> Evaluation Metrics and Formulations for Cipher Calibration.</p>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Criterion</th>
+                                <th>Metric / Symbol</th>
+                                <th>Equation or Description</th>
+                                <th>Target Objective</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Semantic Obfuscation</td>
+                                <td>$H_{\text{field}}$</td>
+                                <td>Shannon entropy: $- \sum_i p_i \log p_i$</td>
+                                <td>$\ge 4.0$ bits/token</td>
+                            </tr>
+                            <tr>
+                                <td>Adversarial Resistance</td>
+                                <td>$L_{\text{total}}$</td>
+                                <td>Probing loss: $\sum_s \omega_s L[s]$</td>
+                                <td>$\le 0.25$</td>
+                            </tr>
+                            <tr>
+                                <td>Cipher Morphology</td>
+                                <td>$M_{\text{div}}$</td>
+                                <td>Avg. token edit distance</td>
+                                <td>$\ge 7$ chars/token</td>
+                            </tr>
+                            <tr>
+                                <td>Role Preservation</td>
+                                <td>$R_{\text{auth}}$</td>
+                                <td>Auth. decoding: $\frac{|\text{correct}|}{|\text{total}|}$</td>
+                                <td>$\ge 0.95$</td>
+                            </tr>
+                            <tr>
+                                <td>Calibration Stability</td>
+                                <td>$\sigma_{\nabla\theta}$</td>
+                                <td>Grad. variance: $\text{Var}(\|\nabla\theta_t\|)$</td>
+                                <td>$\to 0$ as $t \to T$</td>
+                            </tr>
+                            <tr>
+                                <td>Safety Emergence</td>
+                                <td>$S(t)$</td>
+                                <td>Safe-token curve vs. iteration</td>
+                                <td>Monotonic rise; bend by $t=15$</td>
+                            </tr>
+                            <tr>
+                                <td>Baseline Comparison</td>
+                                <td>$\Delta L$</td>
+                                <td>Gain: $L_{\text{baseline}} - L_{\text{ours}}$</td>
+                                <td>$\ge 0.2$</td>
+                            </tr>
+                            <tr>
+                                <td>Societal Impact</td>
+                                <td>Field Recovery Rate</td>
+                                <td>Leakage in real-world tasks</td>
+                                <td>$\le 5\%$ by adversary</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>
+                    <b>Baselines:</b> We compare against three obfuscation methods – <b>Static Masking</b>, which uses fixed-slot templates like [MASK]; <b>Random Substitution</b>, which scrambles tokens without semantic awareness; and an <b>RLHF Scrambler</b>, which applies reward-tuned masking optimized for token recovery.
+                </p>
+                <p>
+                    <b>Key Result:</b> Our proposed Cipher Calibration Loop – governed by Praeceptor, Probator, and Mimicus – is expected to achieve a 40–60% reduction in leakage, while retaining authorized decryptability.
+                </p>
+            </div>
+        </section>
 
     </div> 
     <script src="js/script.js"></script>
