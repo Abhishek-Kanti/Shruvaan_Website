@@ -56,6 +56,7 @@
             color: #6b7280;
             font-style: italic;
         }
+        /* Figure Styles */
         .figure-image-container {
             margin: 2rem 0;
             text-align: center; /* Center the image */
@@ -91,11 +92,29 @@
                 </button>
             </div>
         </header>
-<section class="abstract-section">
+
+        <section class="diagram-section">
+            <div class="diagram-container">
+                <div class="latent-space-header">
+                    <h2>The Cipher Calibration Cycle: Adaptive Hierarchical Encryption with Feedback Learning</h2>
+                </div>
+                <div class="main-image-placeholder">
+                    <img src="images/image.png" alt="Technical Diagram" class="diagram-image" />
+                </div>
+            </div>
+        </section>
+
+        <section class="abstract-section">
             <h2 class="section-title">Abstract</h2>
             <div class="abstract-content">
                 <p>
-                    We propose <strong>श्रुvaan</strong>, the first cryptographically grounded, multilingual model-context protocol (MCP) for agent-to-agent communication. Unlike static ciphers like AES, RSA, or TLS, <strong>श्रुvaan</strong> integrates encryption directly into the evolving semantic layer, treating it as a learned, latent transformation conditioned on agent roles, policies, epochs, and multilingual contexts.
+                    As AI agents increasingly participate in mission-critical workflows—from finance and defense to healthcare and climate response—the need for secure, semantically-aware, and multilingual communication becomes paramount. Existing agent systems provide orchestration and tool-calling capabilities but lack cryptographic safeguards, multilingual protocol integrity, and verifiable messaging, exposing vulnerabilities such as prompt injections, schema mimicry, cross-context spoofing, and multilingual ambiguities.
+                </p>
+                <p>
+                    We propose <strong>श्रुvaan</strong>, the first cryptographically grounded, multilingual model-context protocol (MCP) for agent-to-agent communication. Unlike static ciphers like AES, RSA, or TLS, <strong>श्रुvaan</strong> integrates encryption directly into the evolving semantic layer, treating it as a learned, latent transformation conditioned on agent roles, policies, epochs, and multilingual contexts. Key innovations include a <strong>Hierarchical Keyed Protocol (HKP)</strong> for role- and context-bound encryption, a <strong>Proof-of-Protocol (PoP)</strong> for verifiable and tamper-evident messaging, and a <strong>Cipher Calibration Phase</strong> where coordinated agents continuously refine encryption based on contextual risk.
+                </p>
+                <p>
+                    By enabling zero-reveal communication, multilingual ciphering, and tamper-evident semantics, <strong>श्रुvaan</strong> establishes a foundational leap in secure, role-aware AI agent communication. Its effectiveness will be benchmarked using metrics such as leakage entropy, mimic risk, and decode exclusivity score, ensuring robust and context-sensitive evaluation across multilingual and semantically diverse scenarios.
                 </p>
             </div>
         </section>
@@ -104,18 +123,18 @@
             <h2 class="section-title">SoTA Review</h2>
             <div class="abstract-content">
                 <p>
-                    While frameworks like <strong>OpenAI Function Calling</strong>, <strong>LangChain Agents</strong>, and <strong>Microsoft AutoGen</strong> have accelerated task orchestration, they remain fundamentally unencrypted and semantically shallow. Transport-layer protocols like gRPC offer channel-level security but are blind to meaning.
+                    While frameworks like <strong>OpenAI Function Calling</strong>, <strong>LangChain Agents</strong>, and <strong>Microsoft AutoGen</strong> have accelerated task orchestration, they remain fundamentally unencrypted and semantically shallow. They assume a cooperative sandbox, whereas the real world is adversarial and multilingual. Transport-layer protocols like gRPC offer channel-level security but are blind to meaning—they cannot verify agent identities, preserve intentions, or enforce roles based on the communication's content.
                 </p>
                 <p>
-                    Furthermore, traditional End-to-End Encryption (E2EE) is not sufficient for agentic systems. This model is <strong>brittle</strong>, <strong>blind</strong> to insider threats, and <strong>frozen</strong> during a breach.
+                    Furthermore, traditional End-to-End Encryption (E2EE) is not sufficient for agentic systems. This model is <strong>brittle</strong>, as a single key leak compromises the entire cipher; <strong>blind</strong> to insider threats and compromises; and <strong>frozen</strong> during a breach, as it cannot adapt without a full system reset. It secures the pipe, but not the meaning flowing through it.
                 </p>
                 <p>
-                    <strong>श्रुvaan</strong> breaks this mold by treating encryption as a dynamic <strong>semantic contract</strong>. It introduces a trust-native architecture with innovations like <strong>Hierarchical Keyed Protocols (HKP)</strong> and <strong>Proof-of-Protocol (PoP)</strong> to align encryption with meaning, role, and multilingual reality.
+                    <strong>श्रुvaan</strong> breaks this mold by treating encryption as a dynamic <strong>semantic contract</strong> rather than a static shell. It introduces a trust-native architecture with innovations like <strong>Hierarchical Keyed Protocols (HKP)</strong> and <strong>Proof-of-Protocol (PoP)</strong>. This is the first approach to align encryption with meaning, role, and multilingual reality, enabling secure agent cognition in federated, policy-sensitive ecosystems.
                 </p>
             </div>
-            <div class="table-container">
+             <div class="table-container">
                 <p class="table-caption">
-                    Table 1: Comparative Evaluation of श्रुvaan with Existing Agent Protocols.
+                    Table 1: Comparative Evaluation of श्रुvaan with Existing Agent Protocols. श्रुvaan uniquely integrates multilingual encryption, trust control, and context-grounded security not addressed by current APIs or agent systems.
                 </p>
                 <table class="comparison-table">
                     <thead>
@@ -157,11 +176,65 @@
                             <td class="cross">❌</td>
                             <td class="highlight-col check">✅ Evolving Contextual Ciphers</td>
                         </tr>
+                        <tr>
+                            <td>Role-based Access (HKP)</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="highlight-col check">✅ Hierarchical Keyed Protocols</td>
+                        </tr>
+                        <tr>
+                            <td>Proof-of-Protocol Validation</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="highlight-col check">✅ Hash Trails & Intent Binding</td>
+                        </tr>
+                        <tr>
+                            <td>Trust Graph Federation</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="highlight-col check">✅ Multilingual, Multi-Agent</td>
+                        </tr>
+                        <tr>
+                            <td>Cross-domain Adaptability</td>
+                            <td class="cross">❌ (Limited)</td>
+                            <td class="check">✅</td>
+                            <td class="check">✅</td>
+                            <td class="check">✅</td>
+                            <td class="check">✅</td>
+                            <td class="highlight-col check">✅ Trace-Calibrated</td>
+                        </tr>
+                        <tr>
+                            <td>Native Multilinguality</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="highlight-col check">✅ Token-Level Grounded</td>
+                        </tr>
+                        <tr>
+                            <td>Security-by-Design Architecture</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="highlight-col check">✅ Stagewise Secure Foundation</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
         </section>
-        
+
         <section class="workflow-section">
             <h2 class="section-title">Banking-AI Agentic Workflow: An Example</h2>
             <div class="abstract-content">
@@ -226,8 +299,7 @@
             </div>
         </section>
 
-    </div> <script src="js/script.js"></script>
-</body>
-</html>
+    </div> 
+    <script src="js/script.js"></script>
 </body>
 </html>
