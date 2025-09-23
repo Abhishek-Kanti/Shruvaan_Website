@@ -11,7 +11,7 @@
         /* Table Styles */
         .table-container {
             margin-top: 2rem;
-            overflow-x: auto;
+            overflow-x: auto; /* For responsive behavior on small screens */
         }
         .comparison-table {
             width: 100%;
@@ -35,12 +35,16 @@
         .comparison-table td {
             color: #374151;
         }
-        .comparison-table .check, .comparison-table .cross {
+        .comparison-table .check {
+            color: #16a34a; /* Green */
             font-size: 1.2rem;
             text-align: center;
         }
-        .comparison-table .check { color: #16a34a; }
-        .comparison-table .cross { color: #dc2626; }
+        .comparison-table .cross {
+            color: #dc2626; /* Red */
+            font-size: 1.2rem;
+            text-align: center;
+        }
         .comparison-table .highlight-col {
             background-color: #f9fafb;
         }
@@ -55,55 +59,42 @@
         /* Figure Styles */
         .figure-image-container {
             margin: 2rem 0;
-            text-align: center;
+            text-align: center; /* Center the image */
         }
         .figure-image {
             max-width: 100%;
             height: auto;
-            border: 1px solid #e5e7eb;
+            border: 1px solid #e5e7eb; /* Optional: add a subtle border to the image */
             border-radius: 8px;
-        }
-        /* Multi-panel figure styles */
-        .figure-multi-panel {
-            display: flex;
-            gap: 1.5rem;
-            align-items: flex-start;
-            flex-wrap: wrap; /* Allow wrapping on smaller screens */
-        }
-        .figure-panel {
-            flex: 1;
-            min-width: 280px; /* Minimum width before wrapping */
-            text-align: center;
-        }
-        .figure-panel img {
-            max-width: 100%;
-            border-radius: 8px;
-            border: 1px solid #e5e7eb;
-        }
-        .figure-subcaption {
-            font-size: 0.85rem;
-            color: #4b5563;
-            margin-top: 0.75rem;
-        }
-        /* Code block styles */
-        pre {
-            background-color: #f3f4f6;
-            border: 1px solid #e5e7eb;
-            border-radius: 8px;
-            padding: 1rem;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.875rem;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header class="header">
-            </header>
+            <div class="title-section">
+                <div class="title-content">
+                    <img src="images/e20b8663-4ae5-425f-a497-fee906d81dd5.png" class="main-title-image" />
+                </div>
+            </div>
+            <div class="authors-section">
+                <p class="authors">
+                    <span class="author">Dr. Amitava Das</span>
+                </p>
+                <p class="affiliation">Pragya Lab,BITS Pilani, K.K. Birla Goa Campus</p>
+            </div>
+            <div class="action-buttons">
+                <button class="btn btn-paper" id="paperBtn">
+                    <i class="fas fa-file-alt"></i> Paper
+                </button>
+                <button class="btn btn-code" id="codeBtn">
+                    <i class="fas fa-code"></i> Code
+                </button>
+            </div>
+        </header>
+
         <section class="diagram-section">
-             <div class="diagram-container">
+            <div class="diagram-container">
                 <div class="latent-space-header">
                     <h2>The Cipher Calibration Cycle: Adaptive Hierarchical Encryption with Feedback Learning</h2>
                 </div>
@@ -112,44 +103,200 @@
                 </div>
             </div>
         </section>
-        <section class="abstract-section">
-            </section>
-        <section class="sota-review-section">
-             </section>
-        <section class="workflow-section">
-            </section>
 
-        <section class="calibration-walkthrough-section">
-            <h2 class="section-title">The Cipher Calibration Cycle: A Living Encryption</h2>
+        <section class="abstract-section">
+            <h2 class="section-title">Abstract</h2>
             <div class="abstract-content">
                 <p>
-                    The Cipher Calibration Cycle is a first-of-its-kind dynamic encryption framework. Unlike static cryptographic protocols, this architecture continuously recalibrates its encryption strategy based on traceable risks and mimicry signals from a team of six specialized AI agents. The result is a live, self-correcting semantic cipher that evolves through feedback to preserve both security and meaning. 🧠
+                    As AI agents increasingly participate in mission-critical workflows—from finance and defense to healthcare and climate response—the need for secure, semantically-aware, and multilingual communication becomes paramount. Existing agent systems provide orchestration and tool-calling capabilities but lack cryptographic safeguards, multilingual protocol integrity, and verifiable messaging, exposing vulnerabilities such as prompt injections, schema mimicry, cross-context spoofing, and multilingual ambiguities.
                 </p>
-                <div class="table-container">
-                    <p class="table-caption"><b>Table 4:</b> Roles of Agents in the Cipher Calibration Cycle.</p>
-                    <table class="comparison-table">
-                         </table>
-                </div>
+                <p>
+                    We propose <strong>श्रुvaan</strong>, the first cryptographically grounded, multilingual model-context protocol (MCP) for agent-to-agent communication. Unlike static ciphers like AES, RSA, or TLS, <strong>श्रुvaan</strong> integrates encryption directly into the evolving semantic layer, treating it as a learned, latent transformation conditioned on agent roles, policies, epochs, and multilingual contexts. Key innovations include a <strong>Hierarchical Keyed Protocol (HKP)</strong> for role- and context-bound encryption, a <strong>Proof-of-Protocol (PoP)</strong> for verifiable and tamper-evident messaging, and a <strong>Cipher Calibration Phase</strong> where coordinated agents continuously refine encryption based on contextual risk.
+                </p>
+                <p>
+                    By enabling zero-reveal communication, multilingual ciphering, and tamper-evident semantics, <strong>श्रुvaan</strong> establishes a foundational leap in secure, role-aware AI agent communication. Its effectiveness will be benchmarked using metrics such as leakage entropy, mimic risk, and decode exclusivity score, ensuring robust and context-sensitive evaluation across multilingual and semantically diverse scenarios.
+                </p>
+            </div>
+        </section>
 
-                <h3>Anatomy of a Secure Transaction 🔄</h3>
-                <p>To illustrate the mechanics, we walk through an example input prompt...</p>
-                <p class="figure-caption">
-                    <b>Figure 2: Cipher Calibration Cycle.</b> (A) The agentic cipher protocol shows the 6 agents in a self-regulating loop. (B) The semantic risk landscape shows how Praeceptor calibrates toward minima to reduce both mimicking and decryption vulnerabilities. A third component (not shown) illustrates how token fields morph from recognizable cues to high-entropy ciphers across calibration iterations.
+        <section class="sota-review-section">
+            <h2 class="section-title">SoTA Review</h2>
+            <div class="abstract-content">
+                <p>
+                    While frameworks like <strong>OpenAI Function Calling</strong>, <strong>LangChain Agents</strong>, and <strong>Microsoft AutoGen</strong> have accelerated task orchestration, they remain fundamentally unencrypted and semantically shallow. They assume a cooperative sandbox, whereas the real world is adversarial and multilingual. Transport-layer protocols like gRPC offer channel-level security but are blind to meaning—they cannot verify agent identities, preserve intentions, or enforce roles based on the communication's content.
                 </p>
-                <div class="figure-multi-panel">
-                    <div class="figure-panel">
-                        <img src="images/image.png" alt="Cipher Calibration Cycle with Iconic Circular Layout">
-                        <p class="figure-subcaption">(A) The iconic circular layout of the 6 agents in the feedback loop.</p>
-                    </div>
-                    <div class="figure-panel">
-                        <img src="images/pracepetor_optimization.png" alt="Semantic Calibration Loss Surface">
-                        <p class="figure-subcaption">(B) The semantic calibration loss surface for Praeceptor optimization.</p>
-                    </div>
+                <p>
+                    Furthermore, traditional End-to-End Encryption (E2EE) is not sufficient for agentic systems. This model is <strong>brittle</strong>, as a single key leak compromises the entire cipher; <strong>blind</strong> to insider threats and compromises; and <strong>frozen</strong> during a breach, as it cannot adapt without a full system reset. It secures the pipe, but not the meaning flowing through it.
+                </p>
+                <p>
+                    <strong>श्रुvaan</strong> breaks this mold by treating encryption as a dynamic <strong>semantic contract</strong> rather than a static shell. It introduces a trust-native architecture with innovations like <strong>Hierarchical Keyed Protocols (HKP)</strong> and <strong>Proof-of-Protocol (PoP)</strong>. This is the first approach to align encryption with meaning, role, and multilingual reality, enabling secure agent cognition in federated, policy-sensitive ecosystems.
+                </p>
+            </div>
+             <div class="table-container">
+                <p class="table-caption">
+                    Table 1: Comparative Evaluation of श्रुvaan with Existing Agent Protocols. श्रुvaan uniquely integrates multilingual encryption, trust control, and context-grounded security not addressed by current APIs or agent systems.
+                </p>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Capability</th>
+                            <th>OpenAI</th>
+                            <th>LangChain</th>
+                            <th>AutoGen</th>
+                            <th>gRPC</th>
+                            <th>WebRTC</th>
+                            <th class="highlight-col">श्रुvaan (Ours)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Secure Message Parsing</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="check">✅</td>
+                            <td class="check">✅</td>
+                            <td class="highlight-col check">✅ Structured & Multilingual</td>
+                        </tr>
+                        <tr>
+                            <td>Latent Cipher Bootstrapping</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="highlight-col check">✅ Domain-aligned</td>
+                        </tr>
+                        <tr>
+                            <td>Zero-Reveal Communication</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="highlight-col check">✅ Evolving Contextual Ciphers</td>
+                        </tr>
+                        <tr>
+                            <td>Role-based Access (HKP)</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="highlight-col check">✅ Hierarchical Keyed Protocols</td>
+                        </tr>
+                        <tr>
+                            <td>Proof-of-Protocol Validation</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="highlight-col check">✅ Hash Trails & Intent Binding</td>
+                        </tr>
+                        <tr>
+                            <td>Trust Graph Federation</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="highlight-col check">✅ Multilingual, Multi-Agent</td>
+                        </tr>
+                        <tr>
+                            <td>Cross-domain Adaptability</td>
+                            <td class="cross">❌ (Limited)</td>
+                            <td class="check">✅</td>
+                            <td class="check">✅</td>
+                            <td class="check">✅</td>
+                            <td class="check">✅</td>
+                            <td class="highlight-col check">✅ Trace-Calibrated</td>
+                        </tr>
+                        <tr>
+                            <td>Native Multilinguality</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="highlight-col check">✅ Token-Level Grounded</td>
+                        </tr>
+                        <tr>
+                            <td>Security-by-Design Architecture</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="highlight-col check">✅ Stagewise Secure Foundation</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="workflow-section">
+            <h2 class="section-title">Banking-AI Agentic Workflow: An Example</h2>
+            <div class="abstract-content">
+                <p>
+                    Modern banking infrastructures increasingly rely on distributed AI agents that must not only perform precise computations, but also engage in semantically grounded, role-aware communication. These agents operate under varying layers of trust, privilege, and operational scope—demanding a cohesive yet modular framework to coordinate their interaction.
+                </p>
+                <p>
+                    Modern banking demands more than automation—it requires cryptographic assurance across multilingual, multi-agent infrastructures. As Figure 1 shows, seven agent tiers manage sensitive workflows, prone to prompt injection, role drift, and intent spoofing without safeguards.
+                </p>
+                 <p class="figure-caption">
+                    <b>Figure 1: Hierarchical Access Control in Banking AI Agent System.</b> The diagram illustrates seven functional segments, each grouped by operational trust and cryptographic privilege. These are mapped to five hierarchical access tiers using color-coded blocks: Tier 1 (Public-facing), Tier 2 (Transaction execution), Tier 3 (Lifecycle management), Tier 4 (Risk and anomaly), Tier 5 (Audit and compliance), Tier 6 (Specialized decision/override), and Tier 7 (Infrastructure). This protocol-aware tiering enables श्रुvaan to enforce multilingual safety, verifiable transmission, and intent-aligned execution across agentic banking environments.
+                </p>
+                <div class="figure-image-container">
+                    <img src="images/bank.png" alt="Hierarchical Access Control in Banking AI Agent System" class="figure-image" />
                 </div>
-                
-                <h4>Step 4: Mimicus Signal Leakage Probing</h4>
-                <p>Mimicus detects semantic leakage by simulating imitation attempts from external LLMs. Each decryptor layer is evaluated using three metrics:</p>
-                 </div>
+                 <div class="table-container">
+                    <p class="table-caption"><b>Table 2:</b> Compact View: Hierarchical Keyed Protocol (HKP) Access Levels in श्रुvaan.</p>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Tier</th>
+                                <th>Role</th>
+                                <th>Access Capability</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>T1</td><td>Public Interface</td><td>Encrypt-only input, no readback.</td></tr>
+                            <tr><td>T2</td><td>Transaction Core</td><td>Scoped read/write in transaction domain.</td></tr>
+                            <tr><td>T3</td><td>Lifecycle Agents</td><td>Encrypted state tracking, profile generation.</td></tr>
+                            <tr><td>T4</td><td>Risk & Intelligence</td><td>Partial semantic decode, anomaly detection.</td></tr>
+                            <tr><td>T5</td><td>Compliance & Policy</td><td>Rule enforcement, signature and PoP validation.</td></tr>
+                            <tr><td>T6</td><td>Resolution Agents</td><td>Decryption under verified override context.</td></tr>
+                            <tr><td>T7</td><td>Infrastructure Layer</td><td>ZK-logged recovery, failover handling.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-container">
+                     <p class="table-caption"><b>Table 3:</b> Unified Role Taxonomy of Banking AI Agents with Sample Instructions (English + Hindi).</p>
+                    <table class="comparison-table">
+                         <thead>
+                            <tr>
+                                <th>Agent Name</th>
+                                <th>Role</th>
+                                <th>Instruction (EN)</th>
+                                <th>Instruction (HI)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>SmartTeller</td><td>Chat/Voice interface</td><td>Authenticate via OTP sent to +91-98765-43210.</td><td>+91-98765-43210 पर भेजे गए OTP से प्रमाणीकरण करें।</td></tr>
+                            <tr><td>IntentRouter</td><td>Intent classification and routing</td><td>Block card ending 7612. Route to CardOps.</td><td>7612 अंत वाले कार्ड को ब्लॉक करें, CardOps को भेजें।</td></tr>
+                            <tr><td>TxIntake</td><td>Tokenizes transactions</td><td>Transfer 2,50,000 to FD 9321.</td><td>₹2,50,000 FD खाता 9321 में ट्रांसफर करें।</td></tr>
+                            <tr><td>TxValidator</td><td>Checks limits</td><td>12L exceeds threshold. Flag it.</td><td>₹12 लाख सीमा से अधिक है, फ्लैग करें।</td></tr>
+                            <tr><td>RiskEvaluator</td><td>Assigns risk scores</td><td>Risk 0.87 matches cluster 15-D.</td><td>जोखिम 0.87 — क्लस्टर 15-D से मेल खाता है।</td></tr>
+                            <tr><td>GeoAnomalyBot</td><td>Flags geo inconsistency</td><td>Tx from Lagos, login from Jaipur.</td><td>लेनदेन लागोस से, लॉगिन जयपुर से।</td></tr>
+                            <tr><td>ZKLogger</td><td>ZK-compliant logging</td><td>ZKP hash 0xFA9... generated.</td><td>ZKP हैश 0xFA9... के साथ लॉग तैयार।</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p>
+                    In this workflow, a user-facing query begins at the <b>SmartTeller</b>, which collaborates with the <b>IntentRouter</b> to determine the appropriate semantic route. The request is then propagated through transactional agents like <b>TxIntake</b> and <b>TxValidator</b>, ultimately reaching <b>TxRouter</b> for dispatch. In parallel, governance agents, <b>PolicyOracle</b>, <b>AuditTrail</b>, and <b>ZKLogger</b>, ensure compliance, maintain encrypted traceability, and enforce protocol-level safeguards. This setup reflects the systemic orchestration of secure, interpretable agentic behavior—precisely the kind of executional integrity that श्रुvaan is designed to guarantee.
+                </p>
+            </div>
         </section>
 
     </div> 
