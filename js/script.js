@@ -12,10 +12,10 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Paper button clicked - Add Cornell/arXiv URL here');
         
         // For now, show an alert
-        alert('Paper link will be added here. This will redirect to the Cornell/arXiv paper.');
+        // alert('Paper link will be added here. This will redirect to the Cornell/arXiv paper.');
         
         // Uncomment and add actual URL when ready:
-        // window.open('https://arxiv.org/abs/your-paper-id', '_blank');
+        window.open('https://acrobat.adobe.com/id/urn:aaid:sc:AP:6c190e6e-d2f8-420e-81c6-90e490283b68', '_blank');
     });
     
     // Code button click handler
@@ -25,10 +25,10 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Code button clicked - Add GitHub repository URL here');
         
         // For now, show an alert
-        alert('Code repository link will be added here. This will redirect to the GitHub repository.');
+        // alert('Code repository link will be added here. This will redirect to the GitHub repository.');
         
         // Uncomment and add actual URL when ready:
-        // window.open('https://github.com/your-username/your-repo', '_blank');
+        window.open('https://github.com/Abhishek-Kanti/Shruvaan_Semantic_Loss/tree/main', '_blank');
     });
     
     // Add smooth scrolling for internal links
