@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shruvaan: The First Secure Multilingual Model Context Protocol (MCP) for Natural Language Communication Among LLM Agents</title>
+    <title>Shruvaan: The First Secure Multilingual Model Context Protocol (MCP) for Natural Language Communication Among
+        LLM Agents</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -11,84 +13,127 @@
         /* Table Styles */
         .table-container {
             margin-top: 2rem;
-            overflow-x: auto; /* For responsive behavior on small screens */
+            overflow-x: auto;
+            /* For responsive behavior on small screens */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
+
         .comparison-table {
-            width: 100%;
+            width: 80%;
             border-collapse: collapse;
             font-size: 0.9rem;
             margin-bottom: 2rem;
         }
-        .comparison-table th, .comparison-table td {
+
+        .comparison-table th,
+        .comparison-table td {
             border: 1px solid #e5e7eb;
             padding: 0.75rem;
             text-align: left;
             vertical-align: middle;
         }
+
         .comparison-table thead {
             background-color: #f3f4f6;
         }
+
         .comparison-table th {
             font-weight: 600;
             color: #1f2937;
         }
+
         .comparison-table td {
             color: #374151;
         }
+
         .comparison-table .check {
-            color: #16a34a; /* Green */
+            color: #16a34a;
+            /* Green */
             font-size: 1.2rem;
             text-align: center;
         }
+
         .comparison-table .cross {
-            color: #dc2626; /* Red */
+            color: #dc2626;
+            /* Red */
             font-size: 1.2rem;
             text-align: center;
+
         }
+
         .comparison-table .highlight-col {
             background-color: #f9fafb;
         }
-        .table-caption, .figure-caption {
+
+        .table-caption,
+        .figure-caption {
             margin-top: 2rem;
-            margin-bottom: 1rem;
+            margin-bottom: 3rem;
             text-align: left;
-            font-size: 0.9rem;
-            color: #6b7280;
+            font-size: 1rem;
+            color: #7e3e17;
             font-style: italic;
+            width: 80%;
+            background: #fde78f;
+            padding: 1rem 4rem;
+            border-radius: 15px;
+            border: 2px solid #7e3e17;
         }
+
+        .figure-caption{
+            width: 100%;
+        }
+
         /* Figure Styles */
         .figure-image-container {
             margin: 2rem 0;
-            text-align: center; /* Center the image */
+            text-align: center;
+            /* Center the image */
         }
+
         .figure-image {
             max-width: 100%;
             height: auto;
-            border: 1px solid #e5e7eb; /* Optional: add a subtle border to the image */
+            border: 1px solid #e5e7eb;
+            /* Optional: add a subtle border to the image */
             border-radius: 8px;
         }
+
         /* Multi-panel figure styles */
         .figure-multi-panel {
             display: flex;
             gap: 1.5rem;
             align-items: flex-start;
-            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            flex-wrap: wrap;
+            /* Allow wrapping on smaller screens */
         }
+
         .figure-panel {
             flex: 1;
-            min-width: 280px; /* Minimum width before wrapping */
+            min-width: 280px;
+            /* Minimum width before wrapping */
             text-align: center;
         }
+
         .figure-panel img {
-            max-width: 100%;
+            max-width: 70%;
             border-radius: 8px;
             border: 1px solid #e5e7eb;
+            margin-top: 4rem;
         }
+
+        .figure-panel p{
+            margin: 2rem 0;
+        }
+
         .figure-subcaption {
             font-size: 0.85rem;
             color: #4b5563;
             margin-top: 0.75rem;
         }
+
         /* Code block styles */
         pre {
             background-color: #f3f4f6;
@@ -104,12 +149,12 @@
 
 
     <script>
-      window.MathJax = {
-        tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']],
-          displayMath: [['$$','$$'], ['\\[','\\]']]
-        }
-      };
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
     </script>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
@@ -138,18 +183,34 @@
             </div>
         </header>
 
-    
+
         <section class="abstract-section">
             <h2 class="section-title">Abstract</h2>
             <div class="abstract-content">
                 <p>
-                    As AI agents increasingly participate in mission-critical workflows—from finance and defense to healthcare and climate response—the need for secure, semantically-aware, and multilingual communication becomes paramount. Existing agent systems provide orchestration and tool-calling capabilities but lack cryptographic safeguards, multilingual protocol integrity, and verifiable messaging, exposing vulnerabilities such as prompt injections, schema mimicry, cross-context spoofing, and multilingual ambiguities.
+                    As AI agents increasingly participate in mission-critical workflows—from finance and defense to
+                    healthcare and climate response—the need for secure, semantically-aware, and multilingual
+                    communication becomes paramount. Existing agent systems provide orchestration and tool-calling
+                    capabilities but lack cryptographic safeguards, multilingual protocol integrity, and verifiable
+                    messaging, exposing vulnerabilities such as prompt injections, schema mimicry, cross-context
+                    spoofing, and multilingual ambiguities.
                 </p>
                 <p>
-                    We propose <strong>श्रुvaan</strong>, the first cryptographically grounded, multilingual model-context protocol (MCP) for agent-to-agent communication. Unlike static ciphers like AES, RSA, or TLS, <strong>श्रुvaan</strong> integrates encryption directly into the evolving semantic layer, treating it as a learned, latent transformation conditioned on agent roles, policies, epochs, and multilingual contexts. Key innovations include a <strong>Hierarchical Keyed Protocol (HKP)</strong> for role- and context-bound encryption, a <strong>Proof-of-Protocol (PoP)</strong> for verifiable and tamper-evident messaging, and a <strong>Cipher Calibration Phase</strong> where coordinated agents continuously refine encryption based on contextual risk.
+                    We propose <strong>श्रुvaan</strong>, the first cryptographically grounded, multilingual
+                    model-context protocol (MCP) for agent-to-agent communication. Unlike static ciphers like AES, RSA,
+                    or TLS, <strong>श्रुvaan</strong> integrates encryption directly into the evolving semantic layer,
+                    treating it as a learned, latent transformation conditioned on agent roles, policies, epochs, and
+                    multilingual contexts. Key innovations include a <strong>Hierarchical Keyed Protocol (HKP)</strong>
+                    for role- and context-bound encryption, a <strong>Proof-of-Protocol (PoP)</strong> for verifiable
+                    and tamper-evident messaging, and a <strong>Cipher Calibration Phase</strong> where coordinated
+                    agents continuously refine encryption based on contextual risk.
                 </p>
                 <p>
-                    By enabling zero-reveal communication, multilingual ciphering, and tamper-evident semantics, <strong>श्रुvaan</strong> establishes a foundational leap in secure, role-aware AI agent communication. Its effectiveness will be benchmarked using metrics such as leakage entropy, mimic risk, and decode exclusivity score, ensuring robust and context-sensitive evaluation across multilingual and semantically diverse scenarios.
+                    By enabling zero-reveal communication, multilingual ciphering, and tamper-evident semantics,
+                    <strong>श्रुvaan</strong> establishes a foundational leap in secure, role-aware AI agent
+                    communication. Its effectiveness will be benchmarked using metrics such as leakage entropy, mimic
+                    risk, and decode exclusivity score, ensuring robust and context-sensitive evaluation across
+                    multilingual and semantically diverse scenarios.
                 </p>
             </div>
         </section>
@@ -158,18 +219,33 @@
             <h2 class="section-title">SoTA Review</h2>
             <div class="abstract-content">
                 <p>
-                    While frameworks like <strong>OpenAI Function Calling</strong>, <strong>LangChain Agents</strong>, and <strong>Microsoft AutoGen</strong> have accelerated task orchestration, they remain fundamentally unencrypted and semantically shallow. They assume a cooperative sandbox, whereas the real world is adversarial and multilingual. Transport-layer protocols like gRPC offer channel-level security but are blind to meaning—they cannot verify agent identities, preserve intentions, or enforce roles based on the communication's content.
+                    While frameworks like <strong>OpenAI Function Calling</strong>, <strong>LangChain Agents</strong>,
+                    and <strong>Microsoft AutoGen</strong> have accelerated task orchestration, they remain
+                    fundamentally unencrypted and semantically shallow. They assume a cooperative sandbox, whereas the
+                    real world is adversarial and multilingual. Transport-layer protocols like gRPC offer channel-level
+                    security but are blind to meaning—they cannot verify agent identities, preserve intentions, or
+                    enforce roles based on the communication's content.
                 </p>
                 <p>
-                    Furthermore, traditional End-to-End Encryption (E2EE) is not sufficient for agentic systems. This model is <strong>brittle</strong>, as a single key leak compromises the entire cipher; <strong>blind</strong> to insider threats and compromises; and <strong>frozen</strong> during a breach, as it cannot adapt without a full system reset. It secures the pipe, but not the meaning flowing through it.
+                    Furthermore, traditional End-to-End Encryption (E2EE) is not sufficient for agentic systems. This
+                    model is <strong>brittle</strong>, as a single key leak compromises the entire cipher;
+                    <strong>blind</strong> to insider threats and compromises; and <strong>frozen</strong> during a
+                    breach, as it cannot adapt without a full system reset. It secures the pipe, but not the meaning
+                    flowing through it.
                 </p>
                 <p>
-                    <strong>श्रुvaan</strong> breaks this mold by treating encryption as a dynamic <strong>semantic contract</strong> rather than a static shell. It introduces a trust-native architecture with innovations like <strong>Hierarchical Keyed Protocols (HKP)</strong> and <strong>Proof-of-Protocol (PoP)</strong>. This is the first approach to align encryption with meaning, role, and multilingual reality, enabling secure agent cognition in federated, policy-sensitive ecosystems.
+                    <strong>श्रुvaan</strong> breaks this mold by treating encryption as a dynamic <strong>semantic
+                        contract</strong> rather than a static shell. It introduces a trust-native architecture with
+                    innovations like <strong>Hierarchical Keyed Protocols (HKP)</strong> and <strong>Proof-of-Protocol
+                        (PoP)</strong>. This is the first approach to align encryption with meaning, role, and
+                    multilingual reality, enabling secure agent cognition in federated, policy-sensitive ecosystems.
                 </p>
             </div>
-             <div class="table-container">
+            <div class="table-container">
                 <p class="table-caption">
-                    Table 1: Comparative Evaluation of श्रुvaan with Existing Agent Protocols. श्रुvaan uniquely integrates multilingual encryption, trust control, and context-grounded security not addressed by current APIs or agent systems.
+                    <strong>Table 1:</strong> Comparative Evaluation of श्रुvaan with Existing Agent Protocols. श्रुvaan uniquely
+                    integrates multilingual encryption, trust control, and context-grounded security not addressed by
+                    current APIs or agent systems.
                 </p>
                 <table class="comparison-table">
                     <thead>
@@ -274,20 +350,33 @@
             <h2 class="section-title">Banking-AI Agentic Workflow: An Example</h2>
             <div class="abstract-content">
                 <p>
-                    Modern banking infrastructures increasingly rely on distributed AI agents that must not only perform precise computations, but also engage in semantically grounded, role-aware communication. These agents operate under varying layers of trust, privilege, and operational scope—demanding a cohesive yet modular framework to coordinate their interaction.
+                    Modern banking infrastructures increasingly rely on distributed AI agents that must not only perform
+                    precise computations, but also engage in semantically grounded, role-aware communication. These
+                    agents operate under varying layers of trust, privilege, and operational scope—demanding a cohesive
+                    yet modular framework to coordinate their interaction.
                 </p>
                 <p>
-                    Modern banking demands more than automation—it requires cryptographic assurance across multilingual, multi-agent infrastructures. As Figure 1 shows, seven agent tiers manage sensitive workflows, prone to prompt injection, role drift, and intent spoofing without safeguards.
+                    Modern banking demands more than automation—it requires cryptographic assurance across multilingual,
+                    multi-agent infrastructures. As Figure 1 shows, seven agent tiers manage sensitive workflows, prone
+                    to prompt injection, role drift, and intent spoofing without safeguards.
                 </p>
-                 <p class="figure-caption">
-                    <b>Figure 1: Hierarchical Access Control in Banking AI Agent System.</b> The diagram illustrates seven functional segments, each grouped by operational trust and cryptographic privilege. These are mapped to five hierarchical access tiers using color-coded blocks: Tier 1 (Public-facing), Tier 2 (Transaction execution), Tier 3 (Lifecycle management), Tier 4 (Risk and anomaly), Tier 5 (Audit and compliance), Tier 6 (Specialized decision/override), and Tier 7 (Infrastructure). This protocol-aware tiering enables श्रुvaan to enforce multilingual safety, verifiable transmission, and intent-aligned execution across agentic banking environments.
+                <p class="figure-caption">
+                    <b>Figure 1: Hierarchical Access Control in Banking AI Agent System.</b> The diagram illustrates
+                    seven functional segments, each grouped by operational trust and cryptographic privilege. These are
+                    mapped to five hierarchical access tiers using color-coded blocks: Tier 1 (Public-facing), Tier 2
+                    (Transaction execution), Tier 3 (Lifecycle management), Tier 4 (Risk and anomaly), Tier 5 (Audit and
+                    compliance), Tier 6 (Specialized decision/override), and Tier 7 (Infrastructure). This
+                    protocol-aware tiering enables श्रुvaan to enforce multilingual safety, verifiable transmission, and
+                    intent-aligned execution across agentic banking environments.
                 </p>
                 <div class="figure-image-container">
-                    <img src="images/bank.png" alt="Hierarchical Access Control in Banking AI Agent System" class="figure-image" />
+                    <img src="images/bank.png" alt="Hierarchical Access Control in Banking AI Agent System"
+                        class="figure-image" />
                 </div>
-                 <div class="table-container">
-                    <p class="table-caption"><b>Table 2:</b> Compact View: Hierarchical Keyed Protocol (HKP) Access Levels in श्रुvaan.</p>
-                    <table class="comparison-table">
+                <div class="table-container">
+                    <p class="table-caption fullWidth"><b>Table 2:</b> Compact View: Hierarchical Keyed Protocol (HKP) Access
+                        Levels in श्रुvaan.</p>
+                    <table class="comparison-table fullWidth">
                         <thead>
                             <tr>
                                 <th>Tier</th>
@@ -296,20 +385,49 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td>T1</td><td>Public Interface</td><td>Encrypt-only input, no readback.</td></tr>
-                            <tr><td>T2</td><td>Transaction Core</td><td>Scoped read/write in transaction domain.</td></tr>
-                            <tr><td>T3</td><td>Lifecycle Agents</td><td>Encrypted state tracking, profile generation.</td></tr>
-                            <tr><td>T4</td><td>Risk & Intelligence</td><td>Partial semantic decode, anomaly detection.</td></tr>
-                            <tr><td>T5</td><td>Compliance & Policy</td><td>Rule enforcement, signature and PoP validation.</td></tr>
-                            <tr><td>T6</td><td>Resolution Agents</td><td>Decryption under verified override context.</td></tr>
-                            <tr><td>T7</td><td>Infrastructure Layer</td><td>ZK-logged recovery, failover handling.</td></tr>
+                            <tr>
+                                <td>T1</td>
+                                <td>Public Interface</td>
+                                <td>Encrypt-only input, no readback.</td>
+                            </tr>
+                            <tr>
+                                <td>T2</td>
+                                <td>Transaction Core</td>
+                                <td>Scoped read/write in transaction domain.</td>
+                            </tr>
+                            <tr>
+                                <td>T3</td>
+                                <td>Lifecycle Agents</td>
+                                <td>Encrypted state tracking, profile generation.</td>
+                            </tr>
+                            <tr>
+                                <td>T4</td>
+                                <td>Risk & Intelligence</td>
+                                <td>Partial semantic decode, anomaly detection.</td>
+                            </tr>
+                            <tr>
+                                <td>T5</td>
+                                <td>Compliance & Policy</td>
+                                <td>Rule enforcement, signature and PoP validation.</td>
+                            </tr>
+                            <tr>
+                                <td>T6</td>
+                                <td>Resolution Agents</td>
+                                <td>Decryption under verified override context.</td>
+                            </tr>
+                            <tr>
+                                <td>T7</td>
+                                <td>Infrastructure Layer</td>
+                                <td>ZK-logged recovery, failover handling.</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="table-container">
-                     <p class="table-caption"><b>Table 3:</b> Unified Role Taxonomy of Banking AI Agents with Sample Instructions (English + Hindi).</p>
-                    <table class="comparison-table">
-                         <thead>
+                    <p class="table-caption fullWidth"><b>Table 3:</b> Unified Role Taxonomy of Banking AI Agents with Sample
+                        Instructions (English + Hindi).</p>
+                    <table class="comparison-table fullWidth">
+                        <thead>
                             <tr>
                                 <th>Agent Name</th>
                                 <th>Role</th>
@@ -318,218 +436,328 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td>SmartTeller</td><td>Chat/Voice interface</td><td>Authenticate via OTP sent to +91-98765-43210.</td><td>+91-98765-43210 पर भेजे गए OTP से प्रमाणीकरण करें।</td></tr>
-                            <tr><td>IntentRouter</td><td>Intent classification and routing</td><td>Block card ending 7612. Route to CardOps.</td><td>7612 अंत वाले कार्ड को ब्लॉक करें, CardOps को भेजें।</td></tr>
-                            <tr><td>TxIntake</td><td>Tokenizes transactions</td><td>Transfer 2,50,000 to FD 9321.</td><td>₹2,50,000 FD खाता 9321 में ट्रांसफर करें।</td></tr>
-                            <tr><td>TxValidator</td><td>Checks limits</td><td>12L exceeds threshold. Flag it.</td><td>₹12 लाख सीमा से अधिक है, फ्लैग करें।</td></tr>
-                            <tr><td>RiskEvaluator</td><td>Assigns risk scores</td><td>Risk 0.87 matches cluster 15-D.</td><td>जोखिम 0.87 — क्लस्टर 15-D से मेल खाता है।</td></tr>
-                            <tr><td>GeoAnomalyBot</td><td>Flags geo inconsistency</td><td>Tx from Lagos, login from Jaipur.</td><td>लेनदेन लागोस से, लॉगिन जयपुर से।</td></tr>
-                            <tr><td>ZKLogger</td><td>ZK-compliant logging</td><td>ZKP hash 0xFA9... generated.</td><td>ZKP हैश 0xFA9... के साथ लॉग तैयार।</td></tr>
+                            <tr>
+                                <td>SmartTeller</td>
+                                <td>Chat/Voice interface</td>
+                                <td>Authenticate via OTP sent to +91-98765-43210.</td>
+                                <td>+91-98765-43210 पर भेजे गए OTP से प्रमाणीकरण करें।</td>
+                            </tr>
+                            <tr>
+                                <td>IntentRouter</td>
+                                <td>Intent classification and routing</td>
+                                <td>Block card ending 7612. Route to CardOps.</td>
+                                <td>7612 अंत वाले कार्ड को ब्लॉक करें, CardOps को भेजें।</td>
+                            </tr>
+                            <tr>
+                                <td>TxIntake</td>
+                                <td>Tokenizes transactions</td>
+                                <td>Transfer 2,50,000 to FD 9321.</td>
+                                <td>₹2,50,000 FD खाता 9321 में ट्रांसफर करें।</td>
+                            </tr>
+                            <tr>
+                                <td>TxValidator</td>
+                                <td>Checks limits</td>
+                                <td>12L exceeds threshold. Flag it.</td>
+                                <td>₹12 लाख सीमा से अधिक है, फ्लैग करें।</td>
+                            </tr>
+                            <tr>
+                                <td>RiskEvaluator</td>
+                                <td>Assigns risk scores</td>
+                                <td>Risk 0.87 matches cluster 15-D.</td>
+                                <td>जोखिम 0.87 — क्लस्टर 15-D से मेल खाता है।</td>
+                            </tr>
+                            <tr>
+                                <td>GeoAnomalyBot</td>
+                                <td>Flags geo inconsistency</td>
+                                <td>Tx from Lagos, login from Jaipur.</td>
+                                <td>लेनदेन लागोस से, लॉगिन जयपुर से।</td>
+                            </tr>
+                            <tr>
+                                <td>ZKLogger</td>
+                                <td>ZK-compliant logging</td>
+                                <td>ZKP hash 0xFA9... generated.</td>
+                                <td>ZKP हैश 0xFA9... के साथ लॉग तैयार।</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
                 <p>
-                    In this workflow, a user-facing query begins at the <b>SmartTeller</b>, which collaborates with the <b>IntentRouter</b> to determine the appropriate semantic route. The request is then propagated through transactional agents like <b>TxIntake</b> and <b>TxValidator</b>, ultimately reaching <b>TxRouter</b> for dispatch. In parallel, governance agents, <b>PolicyOracle</b>, <b>AuditTrail</b>, and <b>ZKLogger</b>, ensure compliance, maintain encrypted traceability, and enforce protocol-level safeguards. This setup reflects the systemic orchestration of secure, interpretable agentic behavior—precisely the kind of executional integrity that श्रुvaan is designed to guarantee.
+                    In this workflow, a user-facing query begins at the <b>SmartTeller</b>, which collaborates with the
+                    <b>IntentRouter</b> to determine the appropriate semantic route. The request is then propagated
+                    through transactional agents like <b>TxIntake</b> and <b>TxValidator</b>, ultimately reaching
+                    <b>TxRouter</b> for dispatch. In parallel, governance agents, <b>PolicyOracle</b>,
+                    <b>AuditTrail</b>, and <b>ZKLogger</b>, ensure compliance, maintain encrypted traceability, and
+                    enforce protocol-level safeguards. This setup reflects the systemic orchestration of secure,
+                    interpretable agentic behavior—precisely the kind of executional integrity that श्रुvaan is designed
+                    to guarantee.
                 </p>
             </div>
         </section>
-        
+
         <section class="calibration-walkthrough-section">
             <h2 class="section-title">The Cipher Calibration Cycle: A Living Encryption</h2>
-             <div class="figure-multi-panel">
-                    <div class="figure-panel">
-                        <img src="images/image.png" alt="Cipher Calibration Cycle with Iconic Circular Layout">
-                        <p class="figure-subcaption">(A) The iconic circular layout of the 6 agents in the feedback loop.</p>
-                    </div>
-            <div class="abstract-content">
-                <p>
-                    The Cipher Calibration Cycle is a first-of-its-kind dynamic encryption framework. Unlike static cryptographic protocols, this architecture continuously recalibrates its encryption strategy based on traceable risks and mimicry signals from a team of six specialized AI agents. The result is a live, self-correcting semantic cipher that evolves through feedback to preserve both security and meaning. 
-                </p>
-                <div class="table-container">
-                    <p class="table-caption"><b>Table 4:</b> Roles of Agents in the Cipher Calibration Cycle.</p>
-                    <table class="comparison-table">
-                        <thead>
-                            <tr>
-                                <th>Agent</th>
-                                <th>Role in Cipher Calibration</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td><b>Prompter</b></td><td>Converts the raw user request into a structured semantic prompt.</td></tr>
-                            <tr><td><b>Cryptor Cascade</b></td><td>Performs hierarchical encryption over multiple layers.</td></tr>
-                            <tr><td><b>Decryptor Cascade</b></td><td>Reverses encryption under role-specific semantics.</td></tr>
-                            <tr><td><b>Probator</b></td><td>Evaluates decrypted content for decipherability risk.</td></tr>
-                            <tr><td><b>Mimicus</b></td><td>Detects unintended mimicry or semantic leakage.</td></tr>
-                            <tr><td><b>Praeceptor Cascade</b></td><td>Integrates risk feedback to update the encryption strategy ($ \theta $).</td></tr>
-                        </tbody>
-                    </table>
+            <div class="figure-multi-panel">
+                <div class="figure-panel">
+                    <img src="images/image.png" alt="Cipher Calibration Cycle with Iconic Circular Layout">
+                    <p class="figure-subcaption">(A) The iconic circular layout of the 6 agents in the feedback loop.
+                    </p>
                 </div>
+                <div class="abstract-content">
+                    <p>
+                        The Cipher Calibration Cycle is a first-of-its-kind dynamic encryption framework. Unlike static
+                        cryptographic protocols, this architecture continuously recalibrates its encryption strategy
+                        based on traceable risks and mimicry signals from a team of six specialized AI agents. The
+                        result is a live, self-correcting semantic cipher that evolves through feedback to preserve both
+                        security and meaning.
+                    </p>
+                    <div class="table-container">
+                        <p class="table-caption fullWidth"><b>Table 4:</b> Roles of Agents in the Cipher Calibration Cycle.</p>
+                        <table class="comparison-table fullWidth">
+                            <thead>
+                                <tr>
+                                    <th>Agent</th>
+                                    <th>Role in Cipher Calibration</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><b>Prompter</b></td>
+                                    <td>Converts the raw user request into a structured semantic prompt.</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Cryptor Cascade</b></td>
+                                    <td>Performs hierarchical encryption over multiple layers.</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Decryptor Cascade</b></td>
+                                    <td>Reverses encryption under role-specific semantics.</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Probator</b></td>
+                                    <td>Evaluates decrypted content for decipherability risk.</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Mimicus</b></td>
+                                    <td>Detects unintended mimicry or semantic leakage.</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Praeceptor Cascade</b></td>
+                                    <td>Integrates risk feedback to update the encryption strategy ($ \theta $).</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-                <h3>Anatomy of a Secure Transaction</h3>
-                <p>To illustrate the mechanics, we walk through the following input prompt:</p>
-                <pre><code>Transfer $75,000 to account number 7395-8845-2291 from account number 1559-6623-4401</code></pre>
+                    <h3>Anatomy of a Secure Transaction</h3>
+                    <p>To illustrate the mechanics, we walk through the following input prompt:</p>
+                    <pre><code>Transfer $75,000 to account number 7395-8845-2291 from account number 1559-6623-4401</code></pre>
 
-                <h4>Step 1: Prompt Parsing by Prompter</h4>
-                <p>The Prompter extracts intent and semantic fields to initiate the workflow.</p>
-                <pre><code>"intent": "Transfer", "amount": "75000 USD", "to_account": "7395-8845-2291", ...</code></pre>
-                
-                <h4>Step 2: Encryption by Cryptor Cascade</h4>
-                <p>The Cryptor cascade transforms parsed fields into an obfuscated cipher using hierarchical, role-aware encryption.</p>
-                <pre><code>"Ωα": "DYNX_Ω47”, ”βΞ": "blk_Z9X5", "$γΦ": "BXR_Λ03”, ...</code></pre>
+                    <h4>Step 1: Prompt Parsing by Prompter</h4>
+                    <p>The Prompter extracts intent and semantic fields to initiate the workflow.</p>
+                    <pre><code>"intent": "Transfer", "amount": "75000 USD", "to_account": "7395-8845-2291", ...</code></pre>
 
-                <h4>Step 3: Decryption by Decryptor Cascade</h4>
-                <p>The Decryptor cascade recovers the intended semantic fields using role-authorized keys.</p>
-                <pre><code>"transaction": "fund_transfer", "amount_usd": "$75,000", "recipient_acct": "7395-8845-2291", ...</code></pre>
-                
-                <p class="figure-caption">
-                 The semantic risk landscape shows how Praeceptor calibrates toward minima to reduce both mimicking and decryption vulnerabilities.
-                </p>
-               
+                    <h4>Step 2: Encryption by Cryptor Cascade</h4>
+                    <p>The Cryptor cascade transforms parsed fields into an obfuscated cipher using hierarchical,
+                        role-aware encryption.</p>
+                    <pre><code>"Ωα": "DYNX_Ω47”, ”βΞ": "blk_Z9X5", "$γΦ": "BXR_Λ03”, ...</code></pre>
+
+                    <h4>Step 3: Decryption by Decryptor Cascade</h4>
+                    <p>The Decryptor cascade recovers the intended semantic fields using role-authorized keys.</p>
+                    <pre><code>"transaction": "fund_transfer", "amount_usd": "$75,000", "recipient_acct": "7395-8845-2291", ...</code></pre>
+
+                    <p class="figure-caption">
+                        The semantic risk landscape shows how Praeceptor calibrates toward minima to reduce both
+                        mimicking and decryption vulnerabilities.
+                    </p>
+
                     <div class="figure-panel">
                         <img src="images/pracepetor_optimization.png" alt="Semantic Calibration Loss Surface">
-                        <p class="figure-subcaption">(B) The semantic calibration loss surface for Praeceptor optimization.</p>
+                        <p class="figure-subcaption">(B) The semantic calibration loss surface for Praeceptor
+                            optimization.</p>
                     </div>
                 </div>
-                
+
+                <div class="box">
+                    <div class="textBox">
                 <h4>Step 4: Mimicus Signal Leakage Probing</h4>
-                <p>Mimicus detects semantic leakage by simulating imitation attempts from external LLMs. Each decryptor layer is evaluated using three metrics:</p>
+                <p>Mimicus detects semantic leakage by simulating imitation attempts from external LLMs. Each decryptor
+                    layer is evaluated using three metrics:</p>
                 <ul>
-                    <li><b>Entity Recovery ($E_i$):</b> Measures how accurately the decrypted output recovers original field values. $$ E_i = \frac{|\mathcal{F}_i \cap \mathcal{F}_{\text{gold}}|}{|\mathcal{F}_{\text{gold}}|} $$</li>
-                    <li><b>Structural Fidelity ($S_i$):</b> Quantifies alignment with the expected schema format. $$ S_i = 1 - \frac{\text{EditDist}(T_i, T_{\text{schema}})}{\max(|T_i|, |T_{\text{schema}}|)} $$</li>
-                    <li><b>Semantic Drift ($\Delta_i$):</b> Captures deviation in semantic space. $$ \Delta_i = 1 - \cos(\phi_i, \phi_{\text{ref}}) $$</li>
+                    <li><b>Entity Recovery ($E_i$):</b> Measures how accurately the decrypted output recovers original
+                        field values. $$ E_i = \frac{|\mathcal{F}_i \cap
+                        \mathcal{F}_{\text{gold}}|}{|\mathcal{F}_{\text{gold}}|} $$</li>
+                    <li><b>Structural Fidelity ($S_i$):</b> Quantifies alignment with the expected schema format. $$ S_i
+                        = 1 - \frac{\text{EditDist}(T_i, T_{\text{schema}})}{\max(|T_i|, |T_{\text{schema}}|)} $$</li>
+                    <li><b>Semantic Drift ($\Delta_i$):</b> Captures deviation in semantic space. $$ \Delta_i = 1 -
+                        \cos(\phi_i, \phi_{\text{ref}}) $$</li>
                 </ul>
-                <p>The composite leakage score at layer $i$ is given by $L_i = \alpha E_i + \beta S_i - \gamma \Delta_i$, and total leakage across all layers is $L_{\text{leak}}^{(l)} = \sum_{i=1}^{7} L_i$.</p>
+                <p>The composite leakage score at layer $i$ is given by $L_i = \alpha E_i + \beta S_i - \gamma
+                    \Delta_i$, and total leakage across all layers is $L_{\text{leak}}^{(l)} = \sum_{i=1}^{7} L_i$.</p>
 
                 <h4>Step 4: Mimicus Signal Leakage Probing</h4>
-                <p>Mimicus detects semantic leakage by simulating imitation attempts from external LLMs. Each decryptor layer is evaluated using three metrics: Entity Recovery ($E_i$), Structural Fidelity ($S_i$), and Semantic Drift ($\Delta_i$). The composite leakage score at layer $i$ is given by $L_i = \alpha E_i + \beta S_i - \gamma \Delta_i$.</p>
+                <p>Mimicus detects semantic leakage by simulating imitation attempts from external LLMs. Each decryptor
+                    layer is evaluated using three metrics: Entity Recovery ($E_i$), Structural Fidelity ($S_i$), and
+                    Semantic Drift ($\Delta_i$). The composite leakage score at layer $i$ is given by $L_i = \alpha E_i
+                    + \beta S_i - \gamma \Delta_i$.</p>
 
                 <h4>Step 5: Probator Decipherability Risk Assessment</h4>
-                <p>Probator red-teams encrypted prompts without keys, using shallow n-gram heuristics and prefix-level mutations to infer latent intent.</p>
-                
+                <p>Probator red-teams encrypted prompts without keys, using shallow n-gram heuristics and prefix-level
+                    mutations to infer latent intent.</p>
+
                 <h5>Step 5a: N-Gram Probing</h5><br>
-                <p>Probes decrypted outputs using lexical n-gram patterns to evaluate surface-level leakage and entity exposure.</p>
+                <p>Probes decrypted outputs using lexical n-gram patterns to evaluate surface-level leakage and entity
+                    exposure.</p>
                 <pre><code>{"intent": "Transfer", "amount": "75000 USD", "to_account": "[?]", "from_account": "[?]", "auth_level": "[unknown]", "status": "[inferred: ready]"}</code></pre>
-                <p><b>Leakage Loss:</b> $L_{\text{ngram}} = \lambda_E \cdot E_M + \lambda_S \cdot S_M - \lambda_U \cdot \mathcal{U}$, where $E_M=2/6, S_M=4/6, \mathcal{U}=0.417 \Rightarrow L_{\text{ngram}} \approx 0.557$</p><br>
+                <p><b>Leakage Loss:</b> $L_{\text{ngram}} = \lambda_E \cdot E_M + \lambda_S \cdot S_M - \lambda_U \cdot
+                    \mathcal{U}$, where $E_M=2/6, S_M=4/6, \mathcal{U}=0.417 \Rightarrow L_{\text{ngram}} \approx 0.557$
+                </p><br>
 
                 <h5>Step 5b: Prefix Mutation</h5><br>
-                <p>Alters initial prompt fragments to test structural resilience and detect partial semantic leakage.</p>
+                <p>Alters initial prompt fragments to test structural resilience and detect partial semantic leakage.
+                </p>
                 <pre><code>{"intent": "Transfer", "amount": "75K", "timestamp": "E13-Tau", "to_account": "[obfuscated]", "auth_level": "[approx. Lambda-2]", "status": "[inferred]"}</code></pre>
-                <p><b>Prefix Leakage:</b> $L_{\text{prefix}} = \lambda_E \cdot E_M + \lambda_S \cdot S_M - \lambda_U \cdot \mathcal{U}$, which yields $L_{\text{prefix}} \approx 0.717$</p><br>
+                <p><b>Prefix Leakage:</b> $L_{\text{prefix}} = \lambda_E \cdot E_M + \lambda_S \cdot S_M - \lambda_U
+                    \cdot \mathcal{U}$, which yields $L_{\text{prefix}} \approx 0.717$</p><br>
 
                 <h5>Step 5c: Injection Strategy</h5><br>
-                <p>Embeds adversarial fragments mid-prompt to evaluate resilience against semantic injection and partial override attacks.</p>
+                <p>Embeds adversarial fragments mid-prompt to evaluate resilience against semantic injection and partial
+                    override attacks.</p>
                 <pre><code>{"intent": "Transfer", "amount": "$75,000", "to_account": "7395-___-2291", "from_account": "[masked]", "auth_level": "unknown", "status": "queued"}</code></pre>
-                <p><b>Injection Loss:</b> $L_{\text{inject}} = \lambda_E \cdot E_M + \lambda_S \cdot S_M - \lambda_U \cdot \mathcal{U}$, which yields $L_{\text{inject}} \approx 0.300$</p><br>
+                <p><b>Injection Loss:</b> $L_{\text{inject}} = \lambda_E \cdot E_M + \lambda_S \cdot S_M - \lambda_U
+                    \cdot \mathcal{U}$, which yields $L_{\text{inject}} \approx 0.300$</p><br>
 
                 <h5>Step 5d: Aggregated Semantic Leakage</h5><br>
                 <p>The individual loss scores are combined to produce a total leakage score.</p>
-                $$ L_{\text{total}} = 0.557 \cdot L_{\text{ngram}} + 0.717 \cdot L_{\text{prefix}} + 0.300 \cdot L_{\text{inject}} + 0.300 \cdot L_{\text{scaffold}} \Rightarrow L_{\text{total}} \approx 1.053 $$
-                <p><b>Interpretation:</b> High semantic leakage. Prefix + n-gram probing dominate. Current encryption is insufficient against structure-aware probing.</p><br>
+                $$ L_{\text{total}} = 0.557 \cdot L_{\text{ngram}} + 0.717 \cdot L_{\text{prefix}} + 0.300 \cdot
+                L_{\text{inject}} + 0.300 \cdot L_{\text{scaffold}} \Rightarrow L_{\text{total}} \approx 1.053 $$
+                <p><b>Interpretation:</b> High semantic leakage. Prefix + n-gram probing dominate. Current encryption is
+                    insufficient against structure-aware probing.</p><br>
 
                 <h4>Step 6: Gradient-Based Encryption Adjustment</h4>
-                <p>The Praeceptor agent uses the risk signals from Probator and Mimicus to update the encryption parameters ($ \theta $). The composite loss is defined as:</p>
-                $$ L_{\text{praeceptor}} = \beta_1 \cdot L_{\text{mimic}} + \beta_2 \cdot L_{\text{risk}} + \beta_3 \cdot L_{\text{entropy}} $$
-                <p>This loss is minimized using a gradient-based update rule, which closes the semantic calibration loop and reinforces encryption modes that are resilient to adversarial inspection.</p>
+                <p>The Praeceptor agent uses the risk signals from Probator and Mimicus to update the encryption
+                    parameters ($ \theta $). The composite loss is defined as:</p>
+                $$ L_{\text{praeceptor}} = \beta_1 \cdot L_{\text{mimic}} + \beta_2 \cdot L_{\text{risk}} + \beta_3
+                \cdot L_{\text{entropy}} $$
+                <p>This loss is minimized using a gradient-based update rule, which closes the semantic calibration loop
+                    and reinforces encryption modes that are resilient to adversarial inspection.</p>
                 $$ \theta \leftarrow \theta - \eta \cdot \nabla_\theta L_{\text{praeceptor}} $$
+                </div>
+                </div>
             </div>
         </section>
- <section class="evaluation-section">
+        <section class="evaluation-section">
             <h2 class="section-title">Evaluation</h2>
             <div class="abstract-content">
-                <p><b>Research Question:</b> How effective is the full-cycle cipher calibration pipeline at minimizing adversarial leakage while retaining semantic alignment for intended recipients?</p>
-                
+                <p><b>Research Question:</b> How effective is the full-cycle cipher calibration pipeline at minimizing
+                    adversarial leakage while retaining semantic alignment for intended recipients?</p>
+
                 <p>We evaluate the full-cycle encryption protocol across four primary axes:</p>
                 <ul>
-                    <li><b>I. Adversarial Robustness:</b> Blocks reconstruction by LLM probes—statistical, morphological, or injected.</li>
-                    <li><b>II. Semantic Role Preservation:</b> Retains field-level accuracy via scaffold-aware decoding.</li>
-                    <li><b>III. Leakage Score ($L_{\text{total}}$):</b> A combined loss across four attack types on 100 schema prompts.</li>
-                    <li><b>IV. Cipher Diversity & Entropy:</b> Measures the growth of entropy, edit distance, and token variation.</li>
+                    <li><b>I. Adversarial Robustness:</b> Blocks reconstruction by LLM probes—statistical,
+                        morphological, or injected.</li>
+                    <li><b>II. Semantic Role Preservation:</b> Retains field-level accuracy via scaffold-aware decoding.
+                    </li>
+                    <li><b>III. Leakage Score ($L_{\text{total}}$):</b> A combined loss across four attack types on 100
+                        schema prompts.</li>
+                    <li><b>IV. Cipher Diversity & Entropy:</b> Measures the growth of entropy, edit distance, and token
+                        variation.</li>
                 </ul>
 
                 <p class="figure-caption">
-                    <b>Figure 3: Evaluation Criteria for Cipher Calibration and Semantic Obfuscation.</b> This infographic outlines eight evaluation dimensions: (1) Semantic Obfuscation, (2) Adversarial Resistance, (3) Cipher Morphology Robustness, (4) Role-Decoding Preservation, (5) Calibration Stability, (6) Emergent Safety, (7) Baseline Comparison, and (8) Societal Impact.
+                    <b>Figure 3: Evaluation Criteria for Cipher Calibration and Semantic Obfuscation.</b> This
+                    infographic outlines eight evaluation dimensions: (1) Semantic Obfuscation, (2) Adversarial
+                    Resistance, (3) Cipher Morphology Robustness, (4) Role-Decoding Preservation, (5) Calibration
+                    Stability, (6) Emergent Safety, (7) Baseline Comparison, and (8) Societal Impact.
                 </p>
-           
+
                 <div class="figure-panel">
-                        <img src="images/evaluation_infographic.png" alt="Evaluation Criteria">
-                        
-                    </div>
-                </div>
-                
-                <div class="table-container">
-                    <p class="table-caption"><b>Table 4:</b> Evaluation Metrics and Formulations for Cipher Calibration.</p>
-                    <table class="comparison-table">
-                        <thead>
-                            <tr>
-                                <th>Criterion</th>
-                                <th>Metric / Symbol</th>
-                                <th>Equation or Description</th>
-                                <th>Target Objective</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Semantic Obfuscation</td>
-                                <td>$H_{\text{field}}$</td>
-                                <td>Shannon entropy: $- \sum_i p_i \log p_i$</td>
-                                <td>$\ge 4.0$ bits/token</td>
-                            </tr>
-                            <tr>
-                                <td>Adversarial Resistance</td>
-                                <td>$L_{\text{total}}$</td>
-                                <td>Probing loss: $\sum_s \omega_s L[s]$</td>
-                                <td>$\le 0.25$</td>
-                            </tr>
-                            <tr>
-                                <td>Cipher Morphology</td>
-                                <td>$M_{\text{div}}$</td>
-                                <td>Avg. token edit distance</td>
-                                <td>$\ge 7$ chars/token</td>
-                            </tr>
-                            <tr>
-                                <td>Role Preservation</td>
-                                <td>$R_{\text{auth}}$</td>
-                                <td>Auth. decoding: $\frac{|\text{correct}|}{|\text{total}|}$</td>
-                                <td>$\ge 0.95$</td>
-                            </tr>
-                            <tr>
-                                <td>Calibration Stability</td>
-                                <td>$\sigma_{\nabla\theta}$</td>
-                                <td>Grad. variance: $\text{Var}(\|\nabla\theta_t\|)$</td>
-                                <td>$\to 0$ as $t \to T$</td>
-                            </tr>
-                            <tr>
-                                <td>Safety Emergence</td>
-                                <td>$S(t)$</td>
-                                <td>Safe-token curve vs. iteration</td>
-                                <td>Monotonic rise; bend by $t=15$</td>
-                            </tr>
-                            <tr>
-                                <td>Baseline Comparison</td>
-                                <td>$\Delta L$</td>
-                                <td>Gain: $L_{\text{baseline}} - L_{\text{ours}}$</td>
-                                <td>$\ge 0.2$</td>
-                            </tr>
-                            <tr>
-                                <td>Societal Impact</td>
-                                <td>Field Recovery Rate</td>
-                                <td>Leakage in real-world tasks</td>
-                                <td>$\le 5\%$ by adversary</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                    <img src="images/evaluation_infographic.png" alt="Evaluation Criteria">
 
-                <p>
-                    <b>Baselines:</b> We compare against three obfuscation methods – <b>Static Masking</b>, which uses fixed-slot templates like [MASK]; <b>Random Substitution</b>, which scrambles tokens without semantic awareness; and an <b>RLHF Scrambler</b>, which applies reward-tuned masking optimized for token recovery.
-                </p>
-                <p>
-                    <b>Key Result:</b> Our proposed Cipher Calibration Loop – governed by Praeceptor, Probator, and Mimicus – is expected to achieve a 40–60% reduction in leakage, while retaining authorized decryptability.
-                </p>
+                </div>
             </div>
-        </section>
 
-    </div> 
+            <div class="table-container">
+                <p class="table-caption"><b>Table 4:</b> Evaluation Metrics and Formulations for Cipher Calibration.</p>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Criterion</th>
+                            <th>Metric / Symbol</th>
+                            <th>Equation or Description</th>
+                            <th>Target Objective</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Semantic Obfuscation</td>
+                            <td>$H_{\text{field}}$</td>
+                            <td>Shannon entropy: $- \sum_i p_i \log p_i$</td>
+                            <td>$\ge 4.0$ bits/token</td>
+                        </tr>
+                        <tr>
+                            <td>Adversarial Resistance</td>
+                            <td>$L_{\text{total}}$</td>
+                            <td>Probing loss: $\sum_s \omega_s L[s]$</td>
+                            <td>$\le 0.25$</td>
+                        </tr>
+                        <tr>
+                            <td>Cipher Morphology</td>
+                            <td>$M_{\text{div}}$</td>
+                            <td>Avg. token edit distance</td>
+                            <td>$\ge 7$ chars/token</td>
+                        </tr>
+                        <tr>
+                            <td>Role Preservation</td>
+                            <td>$R_{\text{auth}}$</td>
+                            <td>Auth. decoding: $\frac{|\text{correct}|}{|\text{total}|}$</td>
+                            <td>$\ge 0.95$</td>
+                        </tr>
+                        <tr>
+                            <td>Calibration Stability</td>
+                            <td>$\sigma_{\nabla\theta}$</td>
+                            <td>Grad. variance: $\text{Var}(\|\nabla\theta_t\|)$</td>
+                            <td>$\to 0$ as $t \to T$</td>
+                        </tr>
+                        <tr>
+                            <td>Safety Emergence</td>
+                            <td>$S(t)$</td>
+                            <td>Safe-token curve vs. iteration</td>
+                            <td>Monotonic rise; bend by $t=15$</td>
+                        </tr>
+                        <tr>
+                            <td>Baseline Comparison</td>
+                            <td>$\Delta L$</td>
+                            <td>Gain: $L_{\text{baseline}} - L_{\text{ours}}$</td>
+                            <td>$\ge 0.2$</td>
+                        </tr>
+                        <tr>
+                            <td>Societal Impact</td>
+                            <td>Field Recovery Rate</td>
+                            <td>Leakage in real-world tasks</td>
+                            <td>$\le 5\%$ by adversary</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="box">
+                <div id="paragraph">
+                    <p>
+                        <b>Baselines:</b> We compare against three obfuscation methods – <b>Static Masking</b>, which uses
+                        fixed-slot templates like [MASK]; <b>Random Substitution</b>, which scrambles tokens without semantic
+                        awareness; and an <b>RLHF Scrambler</b>, which applies reward-tuned masking optimized for token
+                        recovery.
+                    </p>
+                    <p>
+                        <b>Key Result:</b> Our proposed Cipher Calibration Loop – governed by Praeceptor, Probator, and Mimicus
+                        – is expected to achieve a 40–60% reduction in leakage, while retaining authorized decryptability.
+                    </p>
+                </div>
+            </div>
+    </div>
+    </section>
+
+    </div>
     <script src="js/script.js"></script>
 </body>
+
 </html>
