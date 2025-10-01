@@ -44,6 +44,31 @@
     border-radius: 8px;
     border: 1px solid #e5e7eb;
 }
+.diag-block {
+  margin: 1rem 0;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background: #f9fafb;
+}
+
+.diag-block summary {
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  font-weight: 600;
+  font-family: monospace;
+  background: #eef1f4;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.diag-code {
+  padding: 1rem;
+  margin: 0;
+  font-size: 0.9rem;
+  background: #f9fafb;
+  color: #374151;
+  overflow-x: auto;
+  line-height: 1.4;
+}
 
 
         .comparison-table thead {
@@ -415,10 +440,34 @@
          alt="Cipher Calibration Flow" 
          class="figure-image-fixed">
 </div>
+ </section>
+<h2 class="section-title">The Leakage Calculation Cycle: Semantic Risk Compression</h2>
 
+<details class="diag-block" open>
+  <summary>▼ Expand Leakage Diagnostics</summary>
+  <pre class="diag-code">
+# Layerwise Leakage Scoring
+L_i = 0.4 * Entity_Recovery(E_i)
+    + 0.4 * Structural_Fidelity(S_i)
+    - 0.2 * Semantic_Drift(Δ_i)
 
+# Layerwise Vectors
+L = [0.20, 0.28, 0.43, 0.11, 0.14, 0.17, 0.22]   # Semantic Leakage
+D = [0.15, 0.24, 0.39, 0.09, 0.12, 0.13, 0.18]   # Decipherability Risk
 
-        </section>
+# Aggregated Risk
+R_total = 0.6 * mean(L) + 0.4 * mean(D) ≈ 0.204
+
+# Probator Adversarial Probing
+L_ngram  ≈ 0.557
+L_prefix ≈ 0.717
+L_inject ≈ 0.300
+L_total  ≈ 1.053   # Dominant Leakage Path: Prefix + N-Gram
+
+# Calibration Loss (Feedback Loop)
+L_praeceptor = 0.4 * L_mimic + 0.5 * L_risk + 0.1 * L_entropy
+  </pre>
+</details>
 
     <script src="js/script.js"></script>
 </body>
