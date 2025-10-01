@@ -34,6 +34,15 @@
             text-align: left;
             vertical-align: middle;
         }
+        .figure-image-large {
+    width: 90%;          /* Take up most of the width */
+    max-width: 1200px;   /* Prevent overly large on big screens */
+    display: block;      
+    margin: 2rem auto;   /* Centers it */
+    border-radius: 12px;
+    border: 2px solid #e5e7eb;
+}
+
 
         .comparison-table thead {
             background-color: #f3f4f6;
@@ -400,11 +409,12 @@
                         </table>
                     </div>
  <div class="title-section">
-            <div style="display: flex; justify-content: center; align-items: center; margin: 20px 0;">
-  <img src="images/Shruvaan_code_flow.png" 
-       alt="Cipher Calibration Cycle - Walkthrough" 
-       style="width: 80%; max-width: 1000px; height: auto;">
+<div class="figure-image-container">
+    <img src="images/Shruvaan_code_flow.png" 
+         alt="Cipher Calibration Flow" 
+         class="figure-image-large">
 </div>
+
 
         </section>
 
