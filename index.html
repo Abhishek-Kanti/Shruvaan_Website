@@ -34,13 +34,15 @@
             text-align: left;
             vertical-align: middle;
         }
-        .figure-image-large {
-    width: 90%;          /* Take up most of the width */
-    max-width: 1200px;   /* Prevent overly large on big screens */
-    display: block;      
-    margin: 2rem auto;   /* Centers it */
-    border-radius: 12px;
-    border: 2px solid #e5e7eb;
+.figure-image-fixed {
+    width: 1600px;
+    max-width: 100%;
+    height: 500px;
+    object-fit: contain;   /* or 'cover' if you prefer fill */
+    display: block;
+    margin: 2rem auto;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
 }
 
 
@@ -408,12 +410,12 @@
                             </tbody>
                         </table>
                     </div>
- <div class="title-section">
 <div class="figure-image-container">
     <img src="images/Shruvaan_code_flow.png" 
          alt="Cipher Calibration Flow" 
-         class="figure-image-large">
+         class="figure-image-fixed">
 </div>
+
 
 
         </section>
