@@ -443,31 +443,40 @@
  </section>
 <h2 class="section-title">The Leakage Calculation Cycle: Semantic Risk Compression</h2>
 
-<details class="diag-block" open>
-  <summary>▼ Expand Leakage Diagnostics</summary>
-  <pre class="diag-code">
-# Layerwise Leakage Scoring
-L_i = 0.4 * Entity_Recovery(E_i)
-    + 0.4 * Structural_Fidelity(S_i)
-    - 0.2 * Semantic_Drift(Δ_i)
+<div class="section-content">
 
-# Layerwise Vectors
-L = [0.20, 0.28, 0.43, 0.11, 0.14, 0.17, 0.22]   # Semantic Leakage
-D = [0.15, 0.24, 0.39, 0.09, 0.12, 0.13, 0.18]   # Decipherability Risk
+    <p>To measure how much encrypted data can be recovered or inferred, each decryptor layer is scored using three compact metrics:</p>
 
-# Aggregated Risk
-R_total = 0.6 * mean(L) + 0.4 * mean(D) ≈ 0.204
+    <ul>
+        <li><strong>Entity Recovery</strong> — Field match accuracy.</li>
+        <li><strong>Structural Fidelity</strong> — Schema similarity.</li>
+        <li><strong>Semantic Drift</strong> — Embedding deviation.</li>
+    </ul>
 
-# Probator Adversarial Probing
-L_ngram  ≈ 0.557
-L_prefix ≈ 0.717
-L_inject ≈ 0.300
-L_total  ≈ 1.053   # Dominant Leakage Path: Prefix + N-Gram
+    <p><strong>Layerwise Leakage Formula:</strong></p>
+    <p>\( L_i = 0.4E_i + 0.4S_i - 0.2\Delta_i \)</p>
 
-# Calibration Loss (Feedback Loop)
-L_praeceptor = 0.4 * L_mimic + 0.5 * L_risk + 0.1 * L_entropy
-  </pre>
-</details>
+    <p><strong>Leakage Vector:</strong>  
+    \( \vec{L} = [0.20,\ 0.28,\ 0.43,\ 0.11,\ 0.14,\ 0.17,\ 0.22] \)</p>
+
+    <p><strong>Decipherability Vector:</strong>  
+    \( \vec{D} = [0.15,\ 0.24,\ 0.39,\ 0.09,\ 0.12,\ 0.13,\ 0.18] \)</p>
+
+    <p><strong>Aggregated Semantic Risk:</strong>  
+    \( R_{\text{total}} = 0.6 \cdot \text{mean}(L_i) + 0.4 \cdot \text{mean}(D_i) \approx 0.204 \)</p>
+
+    <h3>Probator Adversarial Probing</h3>
+    <ul>
+        <li>N-Gram Leakage: \( L_{\text{ngram}} \approx 0.557 \)</li>
+        <li>Prefix Mutation: \( L_{\text{prefix}} \approx 0.717 \)</li>
+        <li>Injection Loss: \( L_{\text{inject}} \approx 0.300 \)</li>
+        <li><strong>Final Leakage:</strong> \( L_{\text{total}} \approx 1.053 \)</li>
+    </ul>
+
+    <p><strong>Calibration Loss Update Rule:</strong>  
+    \( L_{\text{praeceptor}} = 0.4L_{\text{mimic}} + 0.5L_{\text{risk}} + 0.1L_{\text{entropy}} \)</p>
+
+</div>
 
     <script src="js/script.js"></script>
 </body>
